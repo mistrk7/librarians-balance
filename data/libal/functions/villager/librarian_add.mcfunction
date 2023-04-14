@@ -18,8 +18,8 @@ execute if predicate libal:ebook_slot1 run data modify entity @s ArmorItems[0].t
 execute if predicate libal:ebook_slot0 run data modify entity @s ArmorItems[0].tag.Storage[1].ems set from entity @s Offers.Recipes[0].buy.Count
 
 #Merge book data from lectern with Villager's book trade
-execute if predicate libal:ebook_slot1 run data modify entity @s Offers.Recipes[1].sell set from block ~ ~ ~ Book
-execute if predicate libal:ebook_slot0 run data modify entity @s Offers.Recipes[0].sell set from block ~ ~ ~ Book
+execute if predicate libal:ebook_slot1 run data modify entity @s Offers.Recipes[1].sell.tag.StoredEnchantments[0] set from block ~ ~ ~ Book.tag.StoredEnchantments[0]
+execute if predicate libal:ebook_slot0 run data modify entity @s Offers.Recipes[0].sell.tag.StoredEnchantments[0] set from block ~ ~ ~ Book.tag.StoredEnchantments[0]
 
 #Store and compare book level to modify emerald trade
 execute store result score booklvl libal.main run data get block ~ ~ ~ Book.tag.StoredEnchantments[0].lvl
