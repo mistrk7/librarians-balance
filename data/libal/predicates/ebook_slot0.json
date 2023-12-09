@@ -1,7 +1,0 @@
-{
-  "condition": "minecraft:entity_properties",
-  "entity": "this",
-  "predicate": {
-    "nbt": "{Offers:{Recipes:[{sell:{id:\"minecraft:bookshelf\"}},{sell:{id:\"minecraft:enchanted_book\"}}]}}"
-  }
-}
