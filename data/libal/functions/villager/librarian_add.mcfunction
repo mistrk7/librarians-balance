@@ -23,6 +23,10 @@ $execute if data entity @s Offers.Recipes[$(slot)].buyB{Count:1b} run data modif
 $execute if data entity @s Offers.Recipes[$(slot)].buyB{Count:1b} run data modify entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[0] set from block ~ ~ ~ Book.tag.StoredEnchantments[0]
 
 #Store and compare book level to modify emerald trade
+$execute if data entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[{lvl:1s}] run data modify entity @s Offers.Recipes[$(slot)].buy.Count set value 7s
+$execute if data entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[{lvl:2s}] run data modify entity @s Offers.Recipes[$(slot)].buy.Count set value 12s
+$execute if data entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[{lvl:3s}] run data modify entity @s Offers.Recipes[$(slot)].buy.Count set value 19s
+
 execute store result score booklvl libal.main run data get block ~ ~ ~ Book.tag.StoredEnchantments[0].lvl
 execute if data entity @s Offers.Recipes[1].buyB{Count:1b} run execute if score booklvl libal.main matches 4 run data modify entity @s Offers.Recipes[1].buy.Count set value 38s
 execute if data entity @s Offers.Recipes[1].buyB{Count:1b} run execute if score booklvl libal.main matches 5 run data modify entity @s Offers.Recipes[1].buy.Count set value 58s
