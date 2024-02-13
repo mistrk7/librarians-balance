@@ -19,10 +19,10 @@ $data modify entity @s ArmorItems[0].tag.Storage[1].ems set from entity @s Offer
 
 
 ## ADDING THE NEW TRADE ##
-#Store a success value of the Villager's book enchantment level matching into the block's 
+#Store a success value of the Villager's book ID matching into the block's ID
 $execute store success score booklevel libal.main run data modify entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[0] set from block ~ ~ ~ Book.tag.StoredEnchantments[0]
 
-#Compare book level to modify Emerald trade, unless the value already matches.
+#Compare book ID to modify Emerald trade, unless the value already matches.
 $execute unless score booklevel libal.main matches 0 run execute if data entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[{lvl:1s}] run data modify entity @s Offers.Recipes[$(slot)].buy.Count set value 7s
 $execute unless score booklevel libal.main matches 0 run execute if data entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[{lvl:2s}] run data modify entity @s Offers.Recipes[$(slot)].buy.Count set value 12s
 $execute unless score booklevel libal.main matches 0 run execute if data entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[{lvl:3s}] run data modify entity @s Offers.Recipes[$(slot)].buy.Count set value 19s
