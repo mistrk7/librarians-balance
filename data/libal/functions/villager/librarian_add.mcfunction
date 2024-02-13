@@ -31,3 +31,7 @@ execute if data entity @s Offers.Recipes[1].sell.tag.StoredEnchantments[{lvl:4s}
 execute if data entity @s Offers.Recipes[1].sell.tag.StoredEnchantments[{lvl:5s}] run data modify entity @s Offers.Recipes[1].buy.Count set value 58s
 execute if data entity @s Offers.Recipes[0].sell.tag.StoredEnchantments[{lvl:4s}] run data modify entity @s Offers.Recipes[0].buy.Count set value 34s
 execute if data entity @s Offers.Recipes[0].sell.tag.StoredEnchantments[{lvl:5s}] run data modify entity @s Offers.Recipes[0].buy.Count set value 64s
+
+#If either Mending or Silk Touch, bump their Emerald value.
+$execute if data entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[{id:"minecraft:mending"}] run data modify entity @s Offers.Recipes[$(slot)].buy.Count set value 64s
+$execute if data entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[{id:"minecraft:silk_touch"}] run data modify entity @s Offers.Recipes[$(slot)].buy.Count set value 58s
