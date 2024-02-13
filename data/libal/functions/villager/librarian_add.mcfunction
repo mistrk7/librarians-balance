@@ -22,14 +22,12 @@ $execute if data entity @s Offers.Recipes[$(slot)].buyB{Count:1b} run data modif
 #Merge book data from lectern with Villager's book trade
 $execute if data entity @s Offers.Recipes[$(slot)].buyB{Count:1b} run data modify entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[0] set from block ~ ~ ~ Book.tag.StoredEnchantments[0]
 
-#Store and compare book level to modify emerald trade
+#Compare book level to modify Emerald trade
 $execute if data entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[{lvl:1s}] run data modify entity @s Offers.Recipes[$(slot)].buy.Count set value 7s
 $execute if data entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[{lvl:2s}] run data modify entity @s Offers.Recipes[$(slot)].buy.Count set value 12s
 $execute if data entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[{lvl:3s}] run data modify entity @s Offers.Recipes[$(slot)].buy.Count set value 19s
 
-execute store result score booklvl libal.main run data get block ~ ~ ~ Book.tag.StoredEnchantments[0].lvl
-execute if data entity @s Offers.Recipes[1].buyB{Count:1b} run execute if score booklvl libal.main matches 4 run data modify entity @s Offers.Recipes[1].buy.Count set value 38s
-execute if data entity @s Offers.Recipes[1].buyB{Count:1b} run execute if score booklvl libal.main matches 5 run data modify entity @s Offers.Recipes[1].buy.Count set value 58s
-execute if data entity @s Offers.Recipes[0].buyB{Count:1b} run execute if score booklvl libal.main matches 4 run data modify entity @s Offers.Recipes[0].buy.Count set value 34s
-execute if data entity @s Offers.Recipes[0].buyB{Count:1b} run execute if score booklvl libal.main matches 5 run data modify entity @s Offers.Recipes[0].buy.Count set value 64s
-scoreboard players reset booklvl libal.main
+execute if data entity @s Offers.Recipes[1].sell.tag.StoredEnchantments[{lvl:4s}] run data modify entity @s Offers.Recipes[1].buy.Count set value 38s
+execute if data entity @s Offers.Recipes[1].sell.tag.StoredEnchantments[{lvl:5s}] run data modify entity @s Offers.Recipes[1].buy.Count set value 58s
+execute if data entity @s Offers.Recipes[0].sell.tag.StoredEnchantments[{lvl:4s}] run data modify entity @s Offers.Recipes[0].buy.Count set value 34s
+execute if data entity @s Offers.Recipes[0].sell.tag.StoredEnchantments[{lvl:5s}] run data modify entity @s Offers.Recipes[0].buy.Count set value 64s
