@@ -2,7 +2,7 @@
 scoreboard objectives add libal.main dummy
 
 #load settings
-function libal:a_settings
+schedule function libal:a_settings 8t
 
 #load loop
 function libal:loop
