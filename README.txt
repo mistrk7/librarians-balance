@@ -19,7 +19,7 @@ This command changes the level cap to villager default trades.
 CHANGE NUMBER TO YOUR LIKING.
 	/scoreboard players set cap_enchant_level libal.main 3
 
-This gives you four slots to exclude enchants from the lectern
+This gives you four slots to prevent enchants on the lectern
 EACH COMMAND FOR EACH SLOT. 
 	/data modify storage libal:books blacklist[0] set value "minecraft:your_enchant"
 	/data modify storage libal:books blacklist[1] set value "minecraft:for_example"
