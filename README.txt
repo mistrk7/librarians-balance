@@ -23,8 +23,8 @@ This gives you four slots to exclude enchants from the lectern
 EACH COMMAND FOR EACH SLOT. 
 	/data modify storage libal:books blacklist[0] set value "minecraft:your_enchant"
 	/data modify storage libal:books blacklist[1] set value "minecraft:for_example"
-	/data modify storage libal:books blacklist[2] set value "minecraft:silk_touch"
-	/data modify storage libal:books blacklist[3] set value "minecraft:like_that"
+	/data modify storage libal:books blacklist[2] set value "minecraft:soul_speed"
+	/data modify storage libal:books blacklist[3] set value "minecraft:swift_sneak"
 
 
 These settings reset every time the /reload command is entered.
