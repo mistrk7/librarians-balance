@@ -1,5 +1,6 @@
 #Remove 'trader' tag to Villager
 tag @s remove trader
+scoreboard players reset condition libal.main
 #say Bye :(
 
 #Play Particles and Sound

@@ -1,5 +1,6 @@
 #Add 'trader' tag to Villager
 tag @s add trader
+scoreboard players reset condition libal.main
 
 #Play Particles and Sound
 execute if entity @s[nbt={Offers:{Recipes:[{sell:{id:"minecraft:enchanted_book"}}]}}] at @s run particle minecraft:happy_villager ^ ^1.5 ^ 0.3 0.3 0.3 1 14
