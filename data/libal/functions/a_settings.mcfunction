@@ -16,6 +16,9 @@ scoreboard players set cap_enchant_level libal.main 1
 ## Maximum Level Number
 scoreboard players set max_level_number libal.main 3
 
+## Book Blacklist (Enchants exculded from the lectern. Add up to four by replacing the "x" with enchant name: ex. silk_touch)
+data merge storage libal:books {blacklist:["minecraft:x","minecraft:x","minecraft:x","minecraft:x"]}
+
 #Extra Info: This datapack also changed some loot tables to make Mending a little more common.
 #If this is interferring with something or you don't want this behaviour, you can delete the 'loot_tables' folder.
 
