@@ -17,7 +17,7 @@ This command changes whether or not default trades should be capped.
 
 This command changes the level cap to villager default trades.
 CHANGE NUMBER TO YOUR LIKING.
-	/scoreboard players set cap_enchant_level libal.main 3
+	/scoreboard players set max_level_number libal.main 3
 
 This gives you four slots to prevent enchants on the lectern
 EACH COMMAND FOR EACH SLOT. 
