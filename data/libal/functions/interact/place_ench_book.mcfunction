@@ -11,6 +11,5 @@ item replace entity @s weapon.mainhand with air
 #effects
 execute align xyz positioned ~0.5 ~0.5 ~0.5 run playsound minecraft:item.book.put block @a
 
-#Add a librarian for custom trading! Condition = Add a villager
-scoreboard players set condition libal.main 1
-execute as @e[limit=1,sort=nearest,type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] run function libal:villager/librarian_find
+#Judge the book to see if it's able to be traded for.
+function libal:interact/judge_ench_book
