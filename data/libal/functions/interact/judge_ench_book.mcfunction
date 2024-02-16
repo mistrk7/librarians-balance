@@ -15,7 +15,7 @@ execute if score illegal libal.main matches 1 run execute as @e[limit=1,sort=nea
 data modify storage libal:books blacklist set from storage libal:books blacklistB
 
 #If blacklisted, tell the player.
-execute if score illegal libal.main matches 0 run title @p[sort=nearest, limit=1] actionbar "Villagers refuse to learn that book."
+execute if score illegal libal.main matches 0 run title @p[sort=nearest, limit=1] actionbar "Librarains refuse to learn that book."
 
 #Reset book blacklisting
 data remove storage libal:books blacklistB
