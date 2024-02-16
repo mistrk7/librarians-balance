@@ -20,6 +20,9 @@ execute if score illegal libal.main matches 1 run execute store success score il
 execute if score illegal libal.main matches 1 run execute if predicate libal:has_ench_book unless block ~ ~ ~ minecraft:lectern[has_book=true] run function libal:interact/place_ench_book
 data modify storage libal:books blacklist set from storage libal:books blacklistB
 
+#If blacklisted, tell the player.
+execute if score illegal libal.main matches 0 run execute if predicate libal:has_ench_book run title @p[sort=nearest, limit=1] actionbar "Villagers refuse to learn that book."
+
 #Reset book blacklisting
 data remove storage libal:books blacklistB
 scoreboard players reset illegal libal.main
