@@ -14,7 +14,7 @@ execute if score illegal libal.main matches 1 run scoreboard players set conditi
 execute if score illegal libal.main matches 1 run execute as @e[limit=1,sort=nearest,type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] run function libal:villager/librarian_find
 
 #If blacklisted, tell the player.
-execute if score illegal libal.main matches 0 run title @p[sort=nearest, limit=1] actionbar "Librarains refuse to learn that book."
+execute if score illegal libal.main matches 0 run title @p[sort=nearest, limit=1] actionbar "Librarians refuse to learn that book."
 
 #Reset book blacklisting
 data remove storage libal:books blacklistB
