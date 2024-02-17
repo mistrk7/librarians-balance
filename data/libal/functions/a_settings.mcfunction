@@ -13,11 +13,18 @@ scoreboard players set no_mending libal.main 1
 ## Cap the Enchantment level traded by villagers?
 scoreboard players set cap_enchant_level libal.main 1
 
+## Enable Sealed Books?
+scoreboard players set sealed_books libal.main 1
+
 ## Maximum Level Number
 scoreboard players set max_level_number libal.main 3
 
 ## Book Blacklist (Enchants exculded from the lectern. Add up to four by replacing the "x" with enchant name: ex. silk_touch)
 data merge storage libal:books {blacklist:["minecraft:x","minecraft:x","minecraft:x","minecraft:x"]}
+
+## Sealed Books (List of books that cannot be replicated)
+data merge storage libal:books {sealed:["minecraft:mending","minecraft:soul_speed","minecraft:swift_sneak","minecraft:silk_touch","minecraft:frost_walker","minecraft:binding_curse","minecraft:vanishing_curse"]}
+# To remove one, rename it to a non-book. You cannot add more than 7.
 
 #Extra Info: This datapack also changed some loot tables to make Mending a little more common.
 #If this is interferring with something or you don't want this behaviour, you can delete the 'loot_tables' folder.

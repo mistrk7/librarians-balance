@@ -26,6 +26,8 @@ EACH COMMAND FOR EACH SLOT.
 	/data modify storage libal:books blacklist[2] set value "minecraft:soul_speed"
 	/data modify storage libal:books blacklist[3] set value "minecraft:swift_sneak"
 
+Extra: You can change the books that get sealed in [a_settings.mcfunction]
+
 
 These settings reset every time the /reload command is entered.
 

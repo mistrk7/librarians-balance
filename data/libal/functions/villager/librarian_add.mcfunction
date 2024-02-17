@@ -38,6 +38,8 @@ $data modify entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[0] se
 $execute if data entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[{id:"minecraft:mending"}] run data modify entity @s Offers.Recipes[$(slot)].buy.Count set value 64s
 $execute if data entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[{id:"minecraft:silk_touch"}] run data modify entity @s Offers.Recipes[$(slot)].buy.Count set value 58s
 
+## SEALED BOOK LOGIC
+execute if score sealed_books libal.main matches 1 run function libal:villager/trades_seal with storage libal:main
 
 # Play Particles & Sound
 #Positve
