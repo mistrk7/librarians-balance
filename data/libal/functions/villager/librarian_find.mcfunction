@@ -31,6 +31,7 @@ execute if score different libal.main matches 1 run tag @s add checked
 execute if score different libal.main matches 1 run execute as @e[limit=1,tag=!checked,sort=nearest,type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] run function libal:villager/librarian_find
 
 #If there's no longer any villagers to search for, reset.
+execute if score different libal.main matches 1 run execute unless entity @e[tag=!checked,type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] run scoreboard players reset condition libal.main
 execute if score different libal.main matches 1 run execute unless entity @e[tag=!checked,type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] run execute as @e[type=villager] run tag @s remove checked
 scoreboard players reset different libal.main
 
