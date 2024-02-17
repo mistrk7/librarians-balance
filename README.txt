@@ -2,7 +2,7 @@ Hi! Thanks for installing.
 Do you want to configure the datapack?
 
 --- Control the things that this datapack modifies by entering these commands in-game (change the number at the end) ---
---- You can also change these permanently in file [data/libal/functions/a_settings.mcfunction] and then running /reload. ---
+--- You can also change these permanently in file [data/libal/functions/settings.mcfunction] and then running /reload. ---
 
 
 This command changes whether or not Mending should be removed from default trading. 
@@ -26,7 +26,7 @@ EACH COMMAND FOR EACH SLOT.
 	/data modify storage libal:books blacklist[2] set value "minecraft:soul_speed"
 	/data modify storage libal:books blacklist[3] set value "minecraft:swift_sneak"
 
-Extra: You can change the books that get sealed in [a_settings.mcfunction]
+Extra: You can change the books that get sealed in [settings.mcfunction]
 
 
 These settings reset every time the /reload command is entered.

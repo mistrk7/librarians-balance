@@ -2,7 +2,7 @@
 scoreboard objectives add libal.main dummy
 
 #load settings
-schedule function libal:a_settings 8t
+schedule function libal:settings 8t
 
 #List of possible enchantments to replace Mending with
 data merge storage libal:books {Books:["minecraft:flame","minecraft:multishot","minecraft:silk_touch"]}
