@@ -1,7 +1,7 @@
 Hi! Thanks for installing.
 Do you want to configure the datapack?
 
---- Control the things that this datapack modifies by entering these commands in-game (change the number at the end) ---
+--- Control the things that this datapack modifies by entering these commands in-game (run /function libal:options) ---
 --- You can also change these permanently in file [data/libal/functions/settings.mcfunction] and then running /reload. ---
 
 
@@ -32,4 +32,4 @@ Extra: You can change the books that get sealed in [settings.mcfunction]
 These settings reset every time the /reload command is entered.
 
 -- Extra Info: This datapack also changes some loot tables to make Mending more common.
--- If this is interferring with something or you don't want this behaviour, you can delete the 'loot_tables' folder.
+-- If this is interferring with something or you don't want this behaviour, you can delete the 'loot_tables' folder in data > minecraft.
