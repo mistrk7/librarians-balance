@@ -32,5 +32,5 @@ data merge storage libal:books {sealed:["minecraft:mending","minecraft:soul_spee
 ## Rebalance detect ##
 data merge storage libal:main {rebalance:0}
 execute store success storage libal:main rebalance int 1 run locate structure #minecraft:on_plains_village_maps
-execute if data storage libal:main {rebalance:1} run scoreboard players set no_mending libal.main 0
+execute if data storage libal:main {rebalance:1} run scoreboard players set no_mending libal.main -1
 #execute if data storage libal:main {rebalance:1} run tellraw @a ["",{"text":"[Librarian's Balance]:","color":"dark_green"},{"text":" You're using Mojang's "},{"text":"Villager Rebalance","color":"red"},{"text":" datapack, so I've allowed "},{"text":"Villagers to trade for Mending again.","color":"yellow"},{"text":" To turn this back off, please click & run "},{"text":"/scoreboard players set no_mending libal.main 1","color":"aqua","clickEvent":{"action":"suggest_command","value":"/scoreboard players set no_mending libal.main 1"}}]
