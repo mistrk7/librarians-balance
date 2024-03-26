@@ -37,20 +37,6 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 3,
-          "name": "minecraft:book",
-          "functions": [
-            {
-              "function": "minecraft:enchant_randomly",
-              "enchantments": [
-                "minecraft:swift_sneak",
-                "minecraft:mending"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
           "functions": [
             {
               "add": false,
@@ -425,7 +411,20 @@
       "entries": [
         {
           "type": "minecraft:empty",
-          "weight": 75
+          "weight": 71
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "enchantments": [
+                "minecraft:mending"
+              ],
+              "function": "minecraft:enchant_randomly"
+            }
+          ],
+          "name": "minecraft:book",
+          "weight": 4
         },
         {
           "type": "minecraft:item",
