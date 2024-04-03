@@ -14,7 +14,7 @@ scoreboard players set no_mending libal.main 1
 scoreboard players set cap_enchant_level libal.main 1
 
 ## Enable Sealed Books?
-scoreboard players set sealed_books libal.main 1
+scoreboard players set sealed_books libal.main -1
 
 ## Maximum Level Number
 scoreboard players set max_level_number libal.main 3
