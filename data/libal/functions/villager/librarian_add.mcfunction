@@ -25,18 +25,15 @@ $execute unless score booklevel libal.main matches 0 run execute if data entity 
 
 #If you put the villagers own book on his table in an attempt to get a cheaper trade, "he will remember that". Easter egg; you found me :p.
 #execute if entity @s[nbt={Offers:{Recipes:[{sell:{id:"minecraft:enchanted_book"}}]}}] if score booklevel libal.main matches 0 run title @p[sort=nearest, limit=1] actionbar ["",{"selector":"@s"},{"text":" will remember that."}]
-
-execute if data entity @s Offers.Recipes[1].sell.tag.StoredEnchantments[{lvl:4s}] run data modify entity @s Offers.Recipes[1].buy.Count set value 38s
-execute if data entity @s Offers.Recipes[1].sell.tag.StoredEnchantments[{lvl:5s}] run data modify entity @s Offers.Recipes[1].buy.Count set value 58s
-execute if data entity @s Offers.Recipes[0].sell.tag.StoredEnchantments[{lvl:4s}] run data modify entity @s Offers.Recipes[0].buy.Count set value 34s
-execute if data entity @s Offers.Recipes[0].sell.tag.StoredEnchantments[{lvl:5s}] run data modify entity @s Offers.Recipes[0].buy.Count set value 64s
+$execute if data entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[{lvl:4s}] run data modify entity @s Offers.Recipes[1].buy.Count set value 38s
+$execute if data entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[{lvl:5s}] run data modify entity @s Offers.Recipes[1].buy.Count set value 48s
 
 #Merge book data from lectern with Villager's book trade
 $data modify entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[0] set from block ~ ~ ~ Book.tag.StoredEnchantments[0]
 
 #If either Mending or Silk Touch, bump their Emerald value.
-$execute if data entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[{id:"minecraft:mending"}] run data modify entity @s Offers.Recipes[$(slot)].buy.Count set value 64s
-$execute if data entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[{id:"minecraft:silk_touch"}] run data modify entity @s Offers.Recipes[$(slot)].buy.Count set value 58s
+$execute if data entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[{id:"minecraft:mending"}] run data modify entity @s Offers.Recipes[$(slot)].buy.Count set value 52s
+$execute if data entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[{id:"minecraft:silk_touch"}] run data modify entity @s Offers.Recipes[$(slot)].buy.Count set value 38s
 
 ## SEALED BOOK LOGIC
 execute if score sealed_books libal.main matches 1 run function libal:villager/trades_seal with storage libal:main
