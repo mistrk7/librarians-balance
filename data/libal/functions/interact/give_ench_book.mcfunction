@@ -1,5 +1,5 @@
 #copying giving item, 2 @e calls because this doesn't run often enough to optimize tbh
-execute at @s anchored eyes run summon minecraft:item ^ ^ ^ {Tags:["libal_new"],Item:{id:"minecraft:enchanted_book",Count:1b}}
+execute at @s anchored eyes run summon minecraft:item ^ ^ ^ {Tags:["libal_new"],Item:{id:"minecraft:enchanted_book"}}
 execute as @e[type=item,tag=libal_new,limit=1] run function libal:interact/give_ench_book/as_item
 
 #updating blockstate

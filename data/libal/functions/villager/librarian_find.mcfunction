@@ -16,8 +16,8 @@ data modify storage libal:jobs_find vcord[2] set from entity @s Brain.memories."
 execute store success score different libal.main run data modify storage libal:jobs_find vcord set from storage libal:jobs_find cord 
 
 #If the values are same, store the slot that the book is in. (found!)
-execute if score different libal.main matches 0 run execute if data entity @s Offers.Recipes[0].buyB{Count:1b} run data modify storage libal:main slot set value 0
-execute if score different libal.main matches 0 run execute if data entity @s Offers.Recipes[1].buyB{Count:1b} run data modify storage libal:main slot set value 1
+execute if score different libal.main matches 0 run execute if data entity @s Offers.Recipes[0].buyB.id run data modify storage libal:main slot set value 0
+execute if score different libal.main matches 0 run execute if data entity @s Offers.Recipes[1].buyB.id run data modify storage libal:main slot set value 1
 
 #If the values are same, proceed and reset. (found!)
 execute if score different libal.main matches 0 run execute if score condition libal.main matches 0 run function libal:villager/librarian_remove
