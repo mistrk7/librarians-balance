@@ -9,7 +9,6 @@ data merge entity @s {ArmorItems:[{id:"minecraft:stone_button",components:{"mine
 ## SAVING THE OLD TRADE ##
 #Save Villager's book data in button item's 'Storage' tag
 $data modify entity @s ArmorItems[0].components."minecraft:custom_data".Storage[0] set from entity @s Offers.Recipes[$(slot)].sell
-
 #Save Villager's emerald data in button item's 'Storage' tag
 $data modify entity @s ArmorItems[0].components."minecraft:custom_data".Storage[1].ems set from entity @s Offers.Recipes[$(slot)].buy.count
 
@@ -22,9 +21,6 @@ $execute store success score booklevel libal.main run data modify entity @s Offe
 $execute unless score booklevel libal.main matches 0 run execute if data entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[{lvl:1s}] run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 7s
 $execute unless score booklevel libal.main matches 0 run execute if data entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[{lvl:2s}] run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 12s
 $execute unless score booklevel libal.main matches 0 run execute if data entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[{lvl:3s}] run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 19s
-
-#If you put the villagers own book on his table in an attempt to get a cheaper trade, "he will remember that". Easter egg; you found me :p.
-#execute if entity @s[nbt={Offers:{Recipes:[{sell:{id:"minecraft:enchanted_book"}}]}}] if score booklevel libal.main matches 0 run title @p[sort=nearest, limit=1] actionbar ["",{"selector":"@s"},{"text":" will remember that."}]
 $execute if data entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[{lvl:4s}] run data modify entity @s Offers.Recipes[$(slot)].buy.Count set value 38s
 $execute if data entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[{lvl:5s}] run data modify entity @s Offers.Recipes[$(slot)].buy.Count set value 48s
 
