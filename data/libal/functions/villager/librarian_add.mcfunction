@@ -40,7 +40,7 @@ $execute if data entity @s Offers.Recipes[$(slot)].sell.components."minecraft:st
 
 
 ## SEALED BOOK LOGIC
-execute if score sealed_books libal.main matches 1 run function libal:villager/trades_seal with storage libal:main
+execute if score sealed_books libal.main matches 1 run function libal:villager/trades_seal with storage libal:books sealed
 
 # Play Particles & Sound
 #Positve

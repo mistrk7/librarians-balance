@@ -23,7 +23,7 @@ scoreboard players set max_level_number libal.main 3
 data merge storage libal:books {blacklist:[{"minecraft:x":1},{"minecraft:x":1},{"minecraft:x":1},{"minecraft:x":1}]}
 
 ## Sealed Books (List of books that cannot be replicated)
-data merge storage libal:books {sealed:["minecraft:mending","minecraft:soul_speed","minecraft:swift_sneak","minecraft:silk_touch","minecraft:frost_walker","minecraft:binding_curse","minecraft:vanishing_curse"]}
+data merge storage libal:books {sealed:{1:"minecraft:mending",2:"minecraft:soul_speed",3:"minecraft:swift_sneak",4:"minecraft:silk_touch",5:"minecraft:frost_walker",6:"minecraft:binding_curse",7:"minecraft:vanishing_curse"}}
 # To remove one, rename it to a non-book. You cannot add more than 7.
 
 #Extra Info: This datapack also changed some loot tables to make Mending a little more common.

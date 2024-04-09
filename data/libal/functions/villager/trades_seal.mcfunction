@@ -1,20 +1,18 @@
 #Store sealed book data
-data modify storage libal:books sealedB set from storage libal:books sealed
-scoreboard players set isSeal libal.main 1
+scoreboard players set isSeal libal.main 0
 
 #Check for sealed books.
-$execute if score isSeal libal.main matches 1 run execute store success score isSeal libal.main run data modify storage libal:books sealedB[0] set from entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[0].id
-$execute if score isSeal libal.main matches 1 run execute store success score isSeal libal.main run data modify storage libal:books sealedB[1] set from entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[0].id
-$execute if score isSeal libal.main matches 1 run execute store success score isSeal libal.main run data modify storage libal:books sealedB[2] set from entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[0].id
-$execute if score isSeal libal.main matches 1 run execute store success score isSeal libal.main run data modify storage libal:books sealedB[3] set from entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[0].id
-$execute if score isSeal libal.main matches 1 run execute store success score isSeal libal.main run data modify storage libal:books sealedB[4] set from entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[0].id
-$execute if score isSeal libal.main matches 1 run execute store success score isSeal libal.main run data modify storage libal:books sealedB[5] set from entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[0].id
-$execute if score isSeal libal.main matches 1 run execute store success score isSeal libal.main run data modify storage libal:books sealedB[6] set from entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[0].id
-#Store a Zero if there was a sealed book found.
+$execute if score isSeal libal.main matches 0 run execute store success score isSeal libal.main run data get block ~ ~ ~ Book.components."minecraft:stored_enchantments".levels.$(1)
+$execute if score isSeal libal.main matches 0 run execute store success score isSeal libal.main run data get block ~ ~ ~ Book.components."minecraft:stored_enchantments".levels.$(2)
+$execute if score isSeal libal.main matches 0 run execute store success score isSeal libal.main run data get block ~ ~ ~ Book.components."minecraft:stored_enchantments".levels.$(3)
+$execute if score isSeal libal.main matches 0 run execute store success score isSeal libal.main run data get block ~ ~ ~ Book.components."minecraft:stored_enchantments".levels.$(4)
+$execute if score isSeal libal.main matches 0 run execute store success score isSeal libal.main run data get block ~ ~ ~ Book.components."minecraft:stored_enchantments".levels.$(5)
+$execute if score isSeal libal.main matches 0 run execute store success score isSeal libal.main run data get block ~ ~ ~ Book.components."minecraft:stored_enchantments".levels.$(6)
+$execute if score isSeal libal.main matches 0 run execute store success score isSeal libal.main run data get block ~ ~ ~ Book.components."minecraft:stored_enchantments".levels.$(7)
 
 #If the book is sealed, 
-$execute if score isSeal libal.main matches 0 run data modify entity @s Offers.Recipes[$(slot)].sell.tag merge value {sealed:True, display:{Lore:['{"text":" Sealed","color":"blue"}']}}
+execute if score isSeal libal.main matches 1 run execute if data entity @s Offers.Recipes[0].buyB{count:1} run data modify entity @s Offers.Recipes[0].sell merge value {components:{"minecraft:custom_data":{sealed:True},"minecraft:lore":['{"text":" Sealed","color":"blue"}']}}
+execute if score isSeal libal.main matches 1 run execute if data entity @s Offers.Recipes[1].buyB{count:1} run data modify entity @s Offers.Recipes[1].sell merge value {components:{"minecraft:custom_data":{sealed:True},"minecraft:lore":['{"text":" Sealed","color":"blue"}']}}
 
 #Reset book sealeding
-data remove storage libal:books sealedB
 scoreboard players reset isSeal libal.main
