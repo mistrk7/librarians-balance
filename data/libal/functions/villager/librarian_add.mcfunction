@@ -18,18 +18,18 @@ $data modify entity @s ArmorItems[0].components."minecraft:custom_data".Storage[
 $execute store success score booklevel libal.main run data modify entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels set from block ~ ~ ~ Book.components."minecraft:stored_enchantments".levels
 
 #Compare book ID to modify Emerald trade, unless the value already matches.
-$execute unless score booklevel libal.main matches 0 run execute if data entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[{lvl:1s}] run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 7s
-$execute unless score booklevel libal.main matches 0 run execute if data entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[{lvl:2s}] run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 12s
-$execute unless score booklevel libal.main matches 0 run execute if data entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[{lvl:3s}] run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 19s
-$execute if data entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[{lvl:4s}] run data modify entity @s Offers.Recipes[$(slot)].buy.Count set value 38s
-$execute if data entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[{lvl:5s}] run data modify entity @s Offers.Recipes[$(slot)].buy.Count set value 48s
+$execute unless score booklevel libal.main matches 0 run execute if score book_level libal.main matches 1 run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 7s
+$execute unless score booklevel libal.main matches 0 run execute if score book_level libal.main matches 2 run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 12s
+$execute unless score booklevel libal.main matches 0 run execute if score book_level libal.main matches 3 run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 19s
+$execute unless score booklevel libal.main matches 0 run execute if score book_level libal.main matches 4 run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 38s
+$execute unless score booklevel libal.main matches 0 run execute if score book_level libal.main matches 5 run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 48s
 
 #Merge book data from lectern with Villager's book trade
-$data modify entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[0] set from block ~ ~ ~ Book.tag.StoredEnchantments[0]
+$data modify entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels set from block ~ ~ ~ Book.components."minecraft:stored_enchantments".levels
 
 #If either Mending or Silk Touch, bump their Emerald value.
-$execute if data entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[{id:"minecraft:mending"}] run data modify entity @s Offers.Recipes[$(slot)].buy.Count set value 52s
-$execute if data entity @s Offers.Recipes[$(slot)].sell.tag.StoredEnchantments[{id:"minecraft:silk_touch"}] run data modify entity @s Offers.Recipes[$(slot)].buy.Count set value 38s
+$execute if data entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels{"minecraft:mending":1} run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 52s
+$execute if data entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels{"minecraft:silk_touch":1} run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 38s
 
 ## SEALED BOOK LOGIC
 execute if score sealed_books libal.main matches 1 run function libal:villager/trades_seal with storage libal:main
