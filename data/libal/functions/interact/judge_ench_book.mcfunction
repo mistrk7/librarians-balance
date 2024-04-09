@@ -1,30 +1,26 @@
-#Store blacklisted book data
-data modify storage libal:books bookLevels set from block ~ ~ ~ Book.components."minecraft:stored_enchantments".levels
-scoreboard players set illegal libal.main 1
 
 #Check for blacklisted books.
-
-execute if score illegal libal.main matches 1 run execute store success score illegal libal.main run data modify storage libal:books bookLevels set from storage libal:books blacklist[0]
-data modify storage libal:books bookLevels set from block ~ ~ ~ Book.components."minecraft:stored_enchantments".levels
-
-execute if score illegal libal.main matches 1 run execute store success score illegal libal.main run data modify storage libal:books bookLevels set from storage libal:books blacklist[1]
-data modify storage libal:books bookLevels set from block ~ ~ ~ Book.components."minecraft:stored_enchantments".levels
-
-execute if score illegal libal.main matches 1 run execute store success score illegal libal.main run data modify storage libal:books bookLevels set from storage libal:books blacklist[2]
-data modify storage libal:books bookLevels set from block ~ ~ ~ Book.components."minecraft:stored_enchantments".levels
-
-execute if score illegal libal.main matches 1 run execute store success score illegal libal.main run data modify storage libal:books bookLevels set from storage libal:books blacklist[3]
-data modify storage libal:books bookLevels set from block ~ ~ ~ Book.components."minecraft:stored_enchantments".levels
-
-#Store a Zero if there was a blacklisted book found.
-
-#If the book is legal, add a librarian for custom trading! Condition = Add a villager
-execute if score illegal libal.main matches 1 run scoreboard players set condition libal.main 1
-execute if score illegal libal.main matches 1 run execute as @e[limit=1,sort=nearest,type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] run function libal:villager/librarian_find
+$execute store success score book_illegal libal.main run data get storage libal:books {blacklist:[$(bookEnch)]}
 
 #If blacklisted, tell the player.
-execute if score illegal libal.main matches 0 run title @p[sort=nearest, limit=1] actionbar "Librarians refuse to learn that book."
+execute if score book_illegal libal.main matches 1 run title @p[sort=nearest, limit=1] actionbar "Librarians refuse to learn that book."
+
+#Check book Lvl (I, II, III, IV, V)
+scoreboard players set book_level libal.main 0
+$execute if data storage libal:books profile[0].[$(bookEnch)] run scoreboard players set book_level libal.main 1
+$execute if data storage libal:books profile[1].[$(bookEnch)] run scoreboard players set book_level libal.main 2
+$execute if data storage libal:books profile[2].[$(bookEnch)] run scoreboard players set book_level libal.main 3
+$execute if data storage libal:books profile[3].[$(bookEnch)] run scoreboard players set book_level libal.main 4
+$execute if data storage libal:books profile[4].[$(bookEnch)] run scoreboard players set book_level libal.main 5
+
+#If book doesn't match, invalidate and tell the player
+execute if score book_level libal.main matches 0 run title @p[sort=nearest, limit=1] actionbar {"text":"This book is too powerful.","color":"red"}
+execute if score book_level libal.main matches 0 run execute positioned ~ ~ ~ run playsound block.chiseled_bookshelf.pickup.enchanted block @a
+
+#If book is legal and valid, add a librarian for custom trading! Condition = Add a villager
+execute if score book_illegal libal.main matches 0 unless score book_level libal.main matches 0 run function libal:interact/place_ench_book
 
 #Reset book blacklisting
-data remove storage libal:books bookLevels
-scoreboard players reset illegal libal.main
+data remove storage libal:books bookEnch
+scoreboard players reset book_illegal libal.main
+
