@@ -17,10 +17,11 @@ $execute if data storage libal:books profile[4].[$(bookEnch)] run scoreboard pla
 execute if score book_level libal.main matches 0 run title @p[sort=nearest, limit=1] actionbar {"text":"This book is too powerful.","color":"red"}
 execute if score book_level libal.main matches 0 run execute positioned ~ ~ ~ run playsound block.chiseled_bookshelf.pickup.enchanted block @a
 
-#If book is legal and valid, add a librarian for custom trading! Condition = Add a villager
+#If book is legal and valid, place book down
 execute if score book_illegal libal.main matches 0 unless score book_level libal.main matches 0 run function libal:interact/place_ench_book
 
 #Reset book blacklisting
 data remove storage libal:books bookEnch
 scoreboard players reset book_illegal libal.main
+execute if score book_level libal.main matches 0 run scoreboard players reset book_level libal.main
 

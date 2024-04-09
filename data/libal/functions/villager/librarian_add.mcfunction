@@ -15,14 +15,14 @@ $data modify entity @s ArmorItems[0].components."minecraft:custom_data".Storage[
 
 ## ADDING THE NEW TRADE ##
 #Store a success value of the Villager's book ID matching into the block's ID
-$execute store success score booklevel libal.main run data modify entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels set from block ~ ~ ~ Book.components."minecraft:stored_enchantments".levels
+$execute store success score same_book libal.main run data modify entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels set from block ~ ~ ~ Book.components."minecraft:stored_enchantments".levels
 
 #Compare book ID to modify Emerald trade, unless the value already matches.
-$execute unless score booklevel libal.main matches 0 run execute if score book_level libal.main matches 1 run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 7s
-$execute unless score booklevel libal.main matches 0 run execute if score book_level libal.main matches 2 run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 12s
-$execute unless score booklevel libal.main matches 0 run execute if score book_level libal.main matches 3 run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 19s
-$execute unless score booklevel libal.main matches 0 run execute if score book_level libal.main matches 4 run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 38s
-$execute unless score booklevel libal.main matches 0 run execute if score book_level libal.main matches 5 run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 48s
+$execute unless score same_book libal.main matches 0 run execute if score book_level libal.main matches 1 run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 7s
+$execute unless score same_book libal.main matches 0 run execute if score book_level libal.main matches 2 run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 12s
+$execute unless score same_book libal.main matches 0 run execute if score book_level libal.main matches 3 run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 19s
+$execute unless score same_book libal.main matches 0 run execute if score book_level libal.main matches 4 run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 38s
+$execute unless score same_book libal.main matches 0 run execute if score book_level libal.main matches 5 run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 48s
 
 #Merge book data from lectern with Villager's book trade
 $data modify entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels set from block ~ ~ ~ Book.components."minecraft:stored_enchantments".levels
@@ -44,10 +44,11 @@ execute if score sealed_books libal.main matches 1 run function libal:villager/t
 
 # Play Particles & Sound
 #Positve
-execute if entity @s[nbt={Offers:{Recipes:[{sell:{id:"minecraft:enchanted_book"}}]}}] unless score booklevel libal.main matches 0 at @s run particle minecraft:happy_villager ~ ~1.5 ~ 0.3 0.3 0.3 1 14
-execute if entity @s[nbt={Offers:{Recipes:[{sell:{id:"minecraft:enchanted_book"}}]}}] unless score booklevel libal.main matches 0 at @s run playsound entity.villager.work_librarian block @a
+execute if entity @s[nbt={Offers:{Recipes:[{sell:{id:"minecraft:enchanted_book"}}]}}] unless score same_book libal.main matches 0 at @s run particle minecraft:happy_villager ~ ~1.5 ~ 0.3 0.3 0.3 1 14
+execute if entity @s[nbt={Offers:{Recipes:[{sell:{id:"minecraft:enchanted_book"}}]}}] unless score same_book libal.main matches 0 at @s run playsound entity.villager.work_librarian block @a
 #Negative
-execute if entity @s[nbt={Offers:{Recipes:[{sell:{id:"minecraft:enchanted_book"}}]}}] if score booklevel libal.main matches 0 at @s run playsound entity.villager.trade block @a
+execute if entity @s[nbt={Offers:{Recipes:[{sell:{id:"minecraft:enchanted_book"}}]}}] if score same_book libal.main matches 0 at @s run playsound entity.villager.trade block @a
 execute unless entity @s[nbt={Offers:{Recipes:[{sell:{id:"minecraft:enchanted_book"}}]}}] at @s run playsound entity.villager.trade block @a
 
-scoreboard players reset booklevel libal.main
+scoreboard players reset same_book libal.main
+scoreboard players reset book_level libal.main
