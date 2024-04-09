@@ -27,9 +27,17 @@ $execute unless score booklevel libal.main matches 0 run execute if score book_l
 #Merge book data from lectern with Villager's book trade
 $data modify entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels set from block ~ ~ ~ Book.components."minecraft:stored_enchantments".levels
 
-#If either Mending or Silk Touch, bump their Emerald value.
+#If it's a one-time upgrade, bump their Emerald value.
 $execute if data entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels{"minecraft:mending":1} run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 52s
+
+$execute if data entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels{"minecraft:flame":1} run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 48s
+$execute if data entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels{"minecraft:channeling":1} run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 48s
+$execute if data entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels{"minecraft:aqua_affinity":1} run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 48s
+
 $execute if data entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels{"minecraft:silk_touch":1} run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 38s
+$execute if data entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels{"minecraft:infinity":1} run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 38s
+$execute if data entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels{"minecraft:multishot":1} run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 38s
+
 
 ## SEALED BOOK LOGIC
 execute if score sealed_books libal.main matches 1 run function libal:villager/trades_seal with storage libal:main
