@@ -20,6 +20,7 @@ execute if score book_illegal libal.main matches 0 unless score book_level libal
 
 #Reset book blacklisting
 data remove storage libal:books bookEnch
-scoreboard players reset book_illegal libal.main
 execute if score book_level libal.main matches 0 run scoreboard players reset book_level libal.main
+execute if score book_illegal libal.main matches 1 run scoreboard players reset book_level libal.main
+scoreboard players reset book_illegal libal.main
 
