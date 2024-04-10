@@ -12,7 +12,7 @@ $execute if data storage libal:books profile[4].[$(bookEnch)] run scoreboard pla
 
 #If book doesn't match, invalidate and tell the player
 execute if score book_level libal.main matches 0 run title @p[sort=nearest, limit=1] actionbar {"text":"This book is too complex.","color":"red"}
-execute if score book_level libal.main matches 0 run execute positioned ~ ~ ~ run playsound block.chiseled_bookshelf.pickup.enchanted block @a
+execute if score book_level libal.main matches 0 run execute positioned ~ ~ ~ run playsound block.chiseled_bookshelf.pickup.enchanted block @a ~ ~ ~ 0.5
 execute if score book_level libal.main matches 0 run execute positioned ~ ~ ~ run playsound entity.villager.work_cartographer block @a ~ ~ ~ 0.1
 
 #If book is legal and valid, place book down
