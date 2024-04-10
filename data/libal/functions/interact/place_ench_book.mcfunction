@@ -12,7 +12,7 @@ item replace entity @s weapon.mainhand with air
 execute align xyz positioned ~0.5 ~0.5 ~0.5 run playsound minecraft:item.book.put block @a
 
 #Judge the book to see if it's able to be traded for.
-function libal:interact/judge_ench_book
+function libal:interact/judge/ench_book
 
 #Add a librarian for custom trading! Condition = Add a villager
 scoreboard players set condition libal.main 1

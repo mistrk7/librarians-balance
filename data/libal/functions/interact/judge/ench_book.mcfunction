@@ -1,9 +1,6 @@
 
-#Check for blacklisted books.
-$execute store success score book_illegal libal.main run data get storage libal:books {blacklist:[$(bookEnch)]}
-
-#If blacklisted, tell the player.
-execute if score book_illegal libal.main matches 1 run title @p[sort=nearest, limit=1] actionbar "Librarians refuse to learn that book."
+#Judge blacklist
+function libal:interact/judge/blacklist with storage libal:books blacklist
 
 #Check book Lvl (I, II, III, IV, V)
 scoreboard players set book_level libal.main 0

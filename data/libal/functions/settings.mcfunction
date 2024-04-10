@@ -20,7 +20,7 @@ scoreboard players set sealed_books libal.main 1
 scoreboard players set max_level_number libal.main 3
 
 ## Book Blacklist (Enchants exculded from the lectern. Add up to four by replacing the "x" with enchant name: ex. silk_touch)
-data merge storage libal:books {blacklist:[{"minecraft:x":1},{"minecraft:x":1},{"minecraft:x":1},{"minecraft:x":1}]}
+data merge storage libal:books {blacklist:{1:"minecraft:x",2:"minecraft:x",3:"minecraft:x",4:"minecraft:x"}}
 
 ## Sealed Books (List of books that cannot be replicated)
 data merge storage libal:books {sealed:{1:"minecraft:mending",2:"minecraft:soul_speed",3:"minecraft:swift_sneak",4:"minecraft:silk_touch",5:"minecraft:frost_walker",6:"minecraft:binding_curse",7:"minecraft:vanishing_curse"}}
