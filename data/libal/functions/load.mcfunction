@@ -5,7 +5,7 @@ scoreboard objectives add libal.main dummy
 schedule function libal:settings 8t
 
 #List of possible enchantments to replace Mending with
-data merge storage libal:books {Books:[{"minecraft:bane_of_arthropods":1},{"minecraft:smite":1},{"minecraft:loyalty":1}]}
+data merge storage libal:books {replacements:[{"minecraft:bane_of_arthropods":1},{"minecraft:smite":1},{"minecraft:loyalty":1}]}
 
 #List of enchantments sorted by level
 data merge storage libal:books {profile:[\
