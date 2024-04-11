@@ -3,14 +3,14 @@
 #This checks and puts each Enchanted Book level back down to a level of 3.
 
 #Slot 0
-data modify entity @s ArmorItems[1] set from entity @s Offers.Recipes[0].sell
+data modify entity @s[tag=!trader] ArmorItems[1] set from entity @s Offers.Recipes[0].sell
 data modify storage libal:books slot set value 0
-execute if items entity @s armor.legs *[minecraft:stored_enchantments~[{levels:{min:4}}]] run function libal:villager/trades/reduce_set with storage libal:books
+execute if items entity @s[tag=!trader] armor.legs *[minecraft:stored_enchantments~[{levels:{min:4}}]] run function libal:villager/trades/reduce_set with storage libal:books
 
 #Slot 1
-data modify entity @s ArmorItems[1] set from entity @s Offers.Recipes[1].sell
+data modify entity @s[tag=!trader] ArmorItems[1] set from entity @s Offers.Recipes[1].sell
 data modify storage libal:books slot set value 1
-execute if items entity @s armor.legs *[minecraft:stored_enchantments~[{levels:{min:4}}]] run function libal:villager/trades/reduce_set with storage libal:books
+execute if items entity @s[tag=!trader] armor.legs *[minecraft:stored_enchantments~[{levels:{min:4}}]] run function libal:villager/trades/reduce_set with storage libal:books
 
 #Slot 2
 data modify entity @s ArmorItems[1] set from entity @s Offers.Recipes[2].sell
