@@ -14,7 +14,7 @@ $data modify entity @s ArmorItems[0].components."minecraft:custom_data".Storage[
 
 
 ## ADDING THE NEW TRADE ##
-#Store a success value of the Villager's book ID matching into the block's ID
+#Store a success value of the block's ID matching into the Villager's book ID
 $execute store success score same_book libal.main run data modify entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels set from block ~ ~ ~ Book.components."minecraft:stored_enchantments".levels
 
 #Compare book ID to modify Emerald trade, unless the value already matches.
@@ -40,7 +40,7 @@ $execute if data entity @s Offers.Recipes[$(slot)].sell.components."minecraft:st
 
 
 ## SEALED BOOK LOGIC
-execute if score sealed_books libal.main matches 1 run function libal:villager/trades_seal with storage libal:books sealed
+execute if score sealed_books libal.main matches 1 run function libal:villager/trades/seal with storage libal:books sealed
 
 # Play Particles & Sound
 #Positve
