@@ -14,8 +14,8 @@ $data modify entity @s ArmorItems[0].components."minecraft:custom_data".Storage[
 
 
 ## ADDING THE NEW TRADE ##
-#Store a success value of the block's ID matching into the Villager's book ID
-$execute store success score same_book libal.main run data modify entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels set from block ~ ~ ~ Book.components."minecraft:stored_enchantments".levels
+#Store a success value when the Lectern's Book merges into the Villager's Book trade
+$execute store success score same_book libal.main run execute if data entity @s Offers.Recipes[$(slot)].buyB.id run data modify entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels set from block ~ ~ ~ Book.components."minecraft:stored_enchantments".levels
 
 #Compare book ID to modify Emerald trade, unless the value already matches.
 $execute unless score same_book libal.main matches 0 run execute if score book_level libal.main matches 1 run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 7s
@@ -23,9 +23,6 @@ $execute unless score same_book libal.main matches 0 run execute if score book_l
 $execute unless score same_book libal.main matches 0 run execute if score book_level libal.main matches 3 run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 19s
 $execute unless score same_book libal.main matches 0 run execute if score book_level libal.main matches 4 run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 38s
 $execute unless score same_book libal.main matches 0 run execute if score book_level libal.main matches 5 run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 48s
-
-#Merge book data from lectern with Villager's book trade
-$data modify entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels set from block ~ ~ ~ Book.components."minecraft:stored_enchantments".levels
 
 #If it's a one-time upgrade, bump their Emerald value.
 $execute if data entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels{"minecraft:mending":1} run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 52s
