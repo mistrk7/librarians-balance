@@ -16,9 +16,6 @@ scoreboard players set cap_enchant_level libal.main 1
 ## Enable Sealed Books?
 scoreboard players set sealed_books libal.main 1
 
-## Maximum Level Number
-scoreboard players set max_level_number libal.main 3
-
 ## Book Blacklist (Enchants exculded from the lectern. Add up to four by replacing the "x" with enchant name: ex. silk_touch)
 data merge storage libal:books {blacklist:{1:"minecraft:x",2:"minecraft:x",3:"minecraft:x",4:"minecraft:x"}}
 
