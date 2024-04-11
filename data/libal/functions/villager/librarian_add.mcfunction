@@ -8,7 +8,7 @@ data merge entity @s {ArmorItems:[{id:"minecraft:stone_button",components:{"mine
 
 ## SAVING THE OLD TRADE ##
 #Save Villager's book data in button item's 'Storage' tag
-$data modify entity @s ArmorItems[0].components."minecraft:custom_data".Storage[0] set from entity @s Offers.Recipes[$(slot)].sell
+$data modify entity @s ArmorItems[0].components."minecraft:custom_data".Storage[0] set from entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels
 #Save Villager's emerald data in button item's 'Storage' tag
 $data modify entity @s ArmorItems[0].components."minecraft:custom_data".Storage[1].ems set from entity @s Offers.Recipes[$(slot)].buy.count
 
