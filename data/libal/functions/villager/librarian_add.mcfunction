@@ -16,6 +16,7 @@ $data modify entity @s ArmorItems[0].components."minecraft:custom_data".Storage[
 ## ADDING THE NEW TRADE ##
 #Store a success value when the Villager's book in memory (legs armour slot) merges into the Villager's Book trade
 $execute store success score same_book libal.main run execute if data entity @s Offers.Recipes[$(slot)].buyB.id run data modify entity @s Offers.Recipes[$(slot)].sell.components set from entity @s ArmorItems[1].components
+$execute if data entity @s Offers.Recipes[$(slot)].buyB.id run data modify entity @s Offers.Recipes[$(slot)].sell.components merge value {"minecraft:custom_data":{traded:True}}
 
 #Compare book ID to modify Emerald trade, unless the value already matches.
 $execute unless score same_book libal.main matches 0 run execute if score book_level libal.main matches 1 run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 7s
