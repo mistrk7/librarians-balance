@@ -19,4 +19,4 @@ data merge storage libal:books {profile:[\
 data merge storage libal:main {slot:1}
 
 #Storage data for finding the villager
-data merge storage libal:jobs_find {cord:[0,0,0],vcord:[0,0,0]}
+data merge storage libal:jobs_find {cord:[I; 0, 0, 0],vcord:[I; 0, 0, 0]}

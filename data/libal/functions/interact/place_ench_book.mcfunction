@@ -13,4 +13,4 @@ execute align xyz positioned ~0.5 ~0.5 ~0.5 run playsound minecraft:item.book.pu
 
 #Add a librarian for custom trading! Condition = Add a villager
 scoreboard players set condition libal.main 1
-execute as @e[limit=1,sort=nearest,type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] run function libal:villager/librarian_find
+execute as @e[limit=1,sort=nearest,type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] run function libal:villager/librarian_find with storage libal:jobs_find

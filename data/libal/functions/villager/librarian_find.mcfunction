@@ -2,11 +2,6 @@
 
 ##LOOP
 
-#Set up values for finding workstation owner (doesn't need to loop tbh, does anyway)
-data modify storage libal:jobs_find cord[0] set from block ~ ~ ~ x
-data modify storage libal:jobs_find cord[1] set from block ~ ~ ~ y
-data modify storage libal:jobs_find cord[2] set from block ~ ~ ~ z
-
 #Put the job site the villager has into storage
 data modify storage libal:jobs_find vcord[0] set from entity @s Brain.memories."minecraft:job_site".value.pos[0]
 data modify storage libal:jobs_find vcord[1] set from entity @s Brain.memories."minecraft:job_site".value.pos[1]

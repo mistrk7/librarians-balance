@@ -11,7 +11,7 @@ execute if block ~ ~ ~ minecraft:lectern[facing=south] run setblock ~ ~ ~ minecr
 
 #Remove a librarian from custom trading... Condition = remove a villager
 scoreboard players set condition libal.main 0
-execute as @e[limit=1,sort=nearest,type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] run function libal:villager/librarian_find
+execute as @e[limit=1,sort=nearest,type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] run function libal:villager/librarian_find with storage libal:jobs_find
 
 
 #Filter Illegal Trades

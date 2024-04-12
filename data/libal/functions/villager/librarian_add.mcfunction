@@ -3,19 +3,19 @@ tag @s add trader
 scoreboard players reset condition libal.main
 
 #Add 'button' item in Villager ArmorItem#0 to store the current Book data
-data merge entity @s {ArmorItems:[{id:"minecraft:stone_button",components:{"minecraft:custom_data":{Storage:[{},{ems:0}]}}}]}
+data modify entity @s ArmorItems[0] set value {id:"minecraft:stone_button",components:{"minecraft:custom_data":{Storage:[{},{ems:0}]}}}
 
 
 ## SAVING THE OLD TRADE ##
 #Save Villager's book data in button item's 'Storage' tag
-$data modify entity @s ArmorItems[0].components."minecraft:custom_data".Storage[0] set from entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels
+$data modify entity @s ArmorItems[0].components."minecraft:custom_data".Storage[0] set from entity @s Offers.Recipes[$(slot)].sell.components
 #Save Villager's emerald data in button item's 'Storage' tag
 $data modify entity @s ArmorItems[0].components."minecraft:custom_data".Storage[1].ems set from entity @s Offers.Recipes[$(slot)].buy.count
 
 
 ## ADDING THE NEW TRADE ##
-#Store a success value when the Lectern's Book merges into the Villager's Book trade
-$execute store success score same_book libal.main run execute if data entity @s Offers.Recipes[$(slot)].buyB.id run data modify entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels set from block ~ ~ ~ Book.components."minecraft:stored_enchantments".levels
+#Store a success value when the Villager's book in memory (legs armour slot) merges into the Villager's Book trade
+$execute store success score same_book libal.main run execute if data entity @s Offers.Recipes[$(slot)].buyB.id run data modify entity @s Offers.Recipes[$(slot)].sell.components set from entity @s ArmorItems[1].components
 
 #Compare book ID to modify Emerald trade, unless the value already matches.
 $execute unless score same_book libal.main matches 0 run execute if score book_level libal.main matches 1 run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 7s
