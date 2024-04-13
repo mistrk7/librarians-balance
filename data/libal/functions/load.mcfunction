@@ -4,6 +4,9 @@ scoreboard objectives add libal.main dummy
 #load settings
 schedule function libal:settings 8t
 
+#toggle multiplier
+scoreboard players set #m libal.main -1
+
 #List of possible enchantments to replace Mending with
 data merge storage libal:books {replacements:[{"minecraft:bane_of_arthropods":1},{"minecraft:smite":1},{"minecraft:loyalty":1}]}
 
