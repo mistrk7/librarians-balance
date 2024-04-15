@@ -3,7 +3,7 @@
 ######################
 
 #In this page, control the things that this datapack modifies by ONLY changing the number at the end
-# 1=Yes, 0=No #
+# 1=Yes, -1=No #
 
 #You can control these values by executing them as commands in-game (/function libal:options)
 
