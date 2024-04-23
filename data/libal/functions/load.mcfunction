@@ -3,6 +3,7 @@ scoreboard objectives add libal.main dummy
 
 #load settings
 schedule function libal:settings 8t
+scoreboard players set #m libal.main -1
 
 #toggle multiplier
 scoreboard players set #m libal.main -1
