@@ -30,9 +30,9 @@ $execute if data entity @s Offers.Recipes[$(slot)].sell.components."minecraft:st
 
 $execute if data entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels{"minecraft:channeling":1} run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 48s
 $execute if data entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels{"minecraft:aqua_affinity":1} run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 48s
+$execute if data entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels{"minecraft:silk_touch":1} run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 48s
 
 $execute if data entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels{"minecraft:flame":1} run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 38s
-$execute if data entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels{"minecraft:silk_touch":1} run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 38s
 $execute if data entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels{"minecraft:infinity":1} run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 38s
 $execute if data entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels{"minecraft:multishot":1} run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 38s
 
