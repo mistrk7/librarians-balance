@@ -25,9 +25,3 @@ data merge storage libal:books {sealed:{1:"minecraft:x",2:"minecraft:soul_speed"
 
 #Extra Info: This datapack also changed some loot tables to make Mending a little more common.
 #If this is interferring with something or you don't want this behaviour, you can delete the 'loot_tables' folder.
-
-## Rebalance detect ##
-data merge storage libal:main {rebalance:0}
-execute store success storage libal:main rebalance int 1 run locate structure #minecraft:on_plains_village_maps
-execute if data storage libal:main {rebalance:1} run scoreboard players set no_mending libal.main -1
-execute if data storage libal:main {rebalance:1} run tellraw @a ["",{"text":"[Librarian's Balance] ","color":"dark_green"},{"text":"'No mending' feature has been disabled for compatibility with the 'Villager Rebalance' datapack. "},{"text":"why?","color":"gold","hoverEvent":{"action":"show_text","contents":"Mojang's datapack makes mending exclusive to swamp librarians so I don't want to ruin it."}},{"text":"\n- "},{"text":"To keep this enabled, ","color":"gray"},{"text":"click here","color":"aqua","clickEvent":{"action":"run_command","value":"/scoreboard players set no_mending libal.main 1"},"hoverEvent":{"action":"show_text","contents":"keep mending removed from trades"}},{"text":".\n- "},{"text":"You can change this any time in ","color":"gray"},{"text":"options","color":"aqua","clickEvent":{"action":"run_command","value":"/function libal:options"},"hoverEvent":{"action":"show_text","contents":"/function libal:options"}},{"text":"."}]
