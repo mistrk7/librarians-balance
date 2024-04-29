@@ -1,7 +1,6 @@
 #Add 'trader' tag to Villager
 tag @s add trader
 tag @s remove trader_travel
-scoreboard players reset condition libal.main
 
 #Add 'button' item in Villager ArmorItem#0 to store the current Book data
 data modify entity @s ArmorItems[0] set value {id:"minecraft:stone_button",components:{"minecraft:custom_data":{Storage:[{},{ems:0}]}}}
@@ -41,10 +40,12 @@ $execute if data entity @s Offers.Recipes[$(slot)].sell.components."minecraft:st
 ## SEALED BOOK LOGIC
 execute if score sealed_books libal.main matches 1 run function libal:villager/trades/seal with storage libal:books sealed
 
-# Play Particles & Sound
+## Play Particles & Sound
 #Positve
-execute if entity @s[nbt={Offers:{Recipes:[{sell:{id:"minecraft:enchanted_book"}}]}}] unless score same_book libal.main matches 0 at @s run particle minecraft:happy_villager ~ ~1.5 ~ 0.3 0.3 0.3 1 14
-execute if entity @s[nbt={Offers:{Recipes:[{sell:{id:"minecraft:enchanted_book"}}]}}] unless score same_book libal.main matches 0 at @s run playsound entity.villager.work_librarian block @a
+execute store result score random libal.main run random value 1..3 
+execute if entity @s[nbt={Offers:{Recipes:[{sell:{id:"minecraft:enchanted_book"}}]}}] unless score same_book libal.main matches 0 if score random libal.main matches 1 at @s run playsound entity.villager.yes neutral @a ~ ~ ~ 0.5
+scoreboard players reset random libal.main
+
 #Negative
 execute if entity @s[nbt={Offers:{Recipes:[{sell:{id:"minecraft:enchanted_book"}}]}}] if score same_book libal.main matches 0 at @s run playsound entity.villager.trade block @a
 execute unless entity @s[nbt={Offers:{Recipes:[{sell:{id:"minecraft:enchanted_book"}}]}}] at @s run playsound entity.villager.trade block @a
