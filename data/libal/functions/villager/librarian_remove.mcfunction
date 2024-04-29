@@ -15,6 +15,8 @@ execute if data entity @s Offers.Recipes[0].buyB{count:1} run data modify entity
 execute if data entity @s Offers.Recipes[1].buyB{count:1} run data modify entity @s Offers.Recipes[1].buy.count set from entity @s ArmorItems[0].components."minecraft:custom_data".Storage[1].ems
 execute if data entity @s Offers.Recipes[0].buyB{count:1} run data modify entity @s Offers.Recipes[0].buy.count set from entity @s ArmorItems[0].components."minecraft:custom_data".Storage[1].ems
 
+#Stop travelling
+data remove entity @s Brain.memories."minecraft:potential_job_site"
 
 #Remove the button item used for data storing
 data remove entity @s ArmorItems[0]
