@@ -12,7 +12,7 @@ execute if score book_level libal.main matches 0 run execute positioned ~ ~ ~ ru
 execute if score book_level libal.main matches 0 run execute positioned ~ ~ ~ run playsound entity.villager.work_cartographer block @a ~ ~ ~ 0.1
 
 #If book is legal and valid, place book down
-execute if score book_illegal libal.main matches 0 unless score book_level libal.main matches 0 run function libal:interact/place_ench_book
+execute if score book_illegal libal.main matches 0 unless score book_level libal.main matches 0 run function libal:interact/place_ench_book with storage libal:jobs_find
 
 #Reset book blacklisting
 data remove storage libal:books bookEnch

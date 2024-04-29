@@ -6,4 +6,6 @@ $execute as @e[type=villager,nbt={Brain:{memories:{"minecraft:job_site":{value:{
 #Proceed and reset. (found!)
 $execute as @e[type=villager,nbt={Brain:{memories:{"minecraft:job_site":{value:{pos:$(cord)}}}}}] run execute if score condition libal.main matches 0 run function libal:villager/librarian_remove
 $execute as @e[type=villager,nbt={Brain:{memories:{"minecraft:job_site":{value:{pos:$(cord)}}}}}] run execute if score condition libal.main matches 1 run function libal:villager/librarian_add with storage libal:main
+$execute as @e[type=villager,nbt={Brain:{memories:{"minecraft:job_site":{value:{pos:$(cord)}}}}}] run execute if score condition libal.main matches 2 run function libal:villager/librarian_travel with storage libal:jobs_find
+
 scoreboard players reset condition libal.main

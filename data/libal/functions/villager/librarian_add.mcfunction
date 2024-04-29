@@ -1,5 +1,6 @@
 #Add 'trader' tag to Villager
 tag @s add trader
+tag @s remove trader_travel
 scoreboard players reset condition libal.main
 
 #Add 'button' item in Villager ArmorItem#0 to store the current Book data
