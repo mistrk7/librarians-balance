@@ -1,5 +1,5 @@
 
-# Define the list of dictionaries representing objects
+# This helps visualise how I plan to implement the new book pricing
 #while True:
 book = [{"minecraft:efficiency":4},{"minecraft:unbreaking":3}]
 
