@@ -40,15 +40,10 @@ $execute if data entity @s Offers.Recipes[$(slot)].sell.components."minecraft:st
 ## SEALED BOOK LOGIC
 execute if score sealed_books libal.main matches 1 run function libal:villager/trades/seal with storage libal:books sealed
 
-## Play Sound
-#Positve
+## Play Positive sound
 execute store result score random libal.main run random value 1..3 
 execute if entity @s[nbt={Offers:{Recipes:[{sell:{id:"minecraft:enchanted_book"}}]}}] unless score same_book libal.main matches 0 if score random libal.main matches 1 at @s run playsound entity.villager.yes neutral @a ~ ~ ~ 0.5
 scoreboard players reset random libal.main
-
-#Negative
-execute if entity @s[nbt={Offers:{Recipes:[{sell:{id:"minecraft:enchanted_book"}}]}}] if score same_book libal.main matches 0 at @s run playsound entity.villager.trade block @a
-execute unless entity @s[nbt={Offers:{Recipes:[{sell:{id:"minecraft:enchanted_book"}}]}}] at @s run playsound entity.villager.trade block @a
 
 scoreboard players reset same_book libal.main
 scoreboard players reset book_level libal.main
