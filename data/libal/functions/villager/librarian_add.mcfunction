@@ -40,7 +40,7 @@ $execute if data entity @s Offers.Recipes[$(slot)].sell.components."minecraft:st
 ## SEALED BOOK LOGIC
 execute if score sealed_books libal.main matches 1 run function libal:villager/trades/seal with storage libal:books sealed
 
-## Play Particles & Sound
+## Play Sound
 #Positve
 execute store result score random libal.main run random value 1..3 
 execute if entity @s[nbt={Offers:{Recipes:[{sell:{id:"minecraft:enchanted_book"}}]}}] unless score same_book libal.main matches 0 if score random libal.main matches 1 at @s run playsound entity.villager.yes neutral @a ~ ~ ~ 0.5
