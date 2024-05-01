@@ -4,7 +4,8 @@ scoreboard players reset condition libal.main
 #say Bye :(
 
 #Play Particles and Sound
-execute at @s run particle minecraft:smoke ~ ~1.2 ~ 0.2 0.2 0.2 0.01 35
+execute if data entity @s Offers.Recipes[1].buyB{count:1} at @s run particle minecraft:smoke ~ ~1.2 ~ 0.2 0.2 0.2 0.01 35
+execute if data entity @s Offers.Recipes[0].buyB{count:1} at @s run particle minecraft:smoke ~ ~1.2 ~ 0.2 0.2 0.2 0.01 35
 #execute at @s run playsound minecraft:entity.villager.trade block @a
 
 #Changes trade table back to the original
