@@ -1,6 +1,7 @@
 
-# This helps visualise how I plan to implement the new book pricing
-#while True:
+# This helps to easily calculate how books are priced
+# The logic here should be mirrored in .mcfunction at the path data/libal/functions/interact/judge/calculate_price_book.mcfunction
+
 book = [{"minecraft:efficiency":4},{"minecraft:unbreaking":3}]
 
 # Calculate the highest level
@@ -19,8 +20,8 @@ def cost(level):
                 return 48
             if key in {"minecraft:flame", "minecraft:infinity", "minecraft:multishot"}:
                 #EQUIV Level 4
-                return 38
-            if key in {"minecraft:frost_walker","minecraft:fire_aspect","minecraft:soul_speed", "minecraft:swift_sneak",,"minecraft:wind_burst"}:
+                return 36
+            if key in {"minecraft:frost_walker","minecraft:fire_aspect","minecraft:soul_speed", "minecraft:swift_sneak","minecraft:wind_burst"}:
                 #These are mostly sealed books
                 #EQUIV Level 3
                 #Omitted: Breach & density because they are scalable
@@ -28,7 +29,7 @@ def cost(level):
     if level<4:
         return level * 7
     else:
-        return level * 10 - 2
+        return (level-1) * 12
 
 price = (cost(lvl))*stack
 blocks = round(price/9)

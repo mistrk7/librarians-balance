@@ -18,24 +18,10 @@ $data modify entity @s ArmorItems[0].components."minecraft:custom_data".Storage[
 $execute store success score same_book libal.main run execute if data entity @s Offers.Recipes[$(slot)].buyB.id run data modify entity @s Offers.Recipes[$(slot)].sell.components set from entity @s ArmorItems[1].components
 $execute if data entity @s Offers.Recipes[$(slot)].buyB.id run data modify entity @s Offers.Recipes[$(slot)].sell.components merge value {"minecraft:custom_data":{traded:True}}
 
-#Compare book ID to modify Emerald trade, unless the value already matches.
-$execute unless score same_book libal.main matches 0 run execute if score book_level libal.main matches 1 run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 7s
-$execute unless score same_book libal.main matches 0 run execute if score book_level libal.main matches 2 run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 12s
-$execute unless score same_book libal.main matches 0 run execute if score book_level libal.main matches 3 run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 19s
-$execute unless score same_book libal.main matches 0 run execute if score book_level libal.main matches 4 run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 38s
-$execute unless score same_book libal.main matches 0 run execute if score book_level libal.main matches 5 run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 48s
-
-#If it's a one-time upgrade, bump their Emerald value.
-$execute if data entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels{"minecraft:mending":1} run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 52s
-
-$execute if data entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels{"minecraft:channeling":1} run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 48s
-$execute if data entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels{"minecraft:aqua_affinity":1} run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 48s
-$execute if data entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels{"minecraft:silk_touch":1} run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 48s
-
-$execute if data entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels{"minecraft:flame":1} run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 38s
-$execute if data entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels{"minecraft:infinity":1} run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 38s
-$execute if data entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels{"minecraft:multishot":1} run data modify entity @s Offers.Recipes[$(slot)].buy.count set value 38s
-
+#Set the trade to the books emerald value, unless the book already matches.
+$execute unless score same_book libal.main matches 0 if data storage libal:books {cost_blocks:True} run data modify entity @s Offers.Recipes[$(slot)].buy.count set from storage libal:books cost_final
+$execute unless score same_book libal.main matches 0 if data storage libal:books {cost_blocks:True} run data modify entity @s Offers.Recipes[$(slot)].buy.id set value "minecraft:emerald_block"
+$execute unless score same_book libal.main matches 0 if data storage libal:books {cost_blocks:False} run data modify entity @s Offers.Recipes[$(slot)].buy.count set from storage libal:books cost_final
 
 ## SEALED BOOK LOGIC
 execute if score sealed_books libal.main matches 1 run function libal:villager/trades/seal with storage libal:books sealed
@@ -46,4 +32,3 @@ execute if entity @s[nbt={Offers:{Recipes:[{sell:{id:"minecraft:enchanted_book"}
 scoreboard players reset random libal.main
 
 scoreboard players reset same_book libal.main
-scoreboard players reset book_level libal.main

@@ -14,7 +14,9 @@ execute if data entity @s Offers.Recipes[0].buyB{count:1} run data modify entity
 
 #Changes emerald trade back to the original
 execute if data entity @s Offers.Recipes[1].buyB{count:1} run data modify entity @s Offers.Recipes[1].buy.count set from entity @s ArmorItems[0].components."minecraft:custom_data".Storage[1].ems
+execute if data entity @s Offers.Recipes[1].buyB{count:1} run data modify entity @s Offers.Recipes[1].buy.id set value "minecraft:emerald"
 execute if data entity @s Offers.Recipes[0].buyB{count:1} run data modify entity @s Offers.Recipes[0].buy.count set from entity @s ArmorItems[0].components."minecraft:custom_data".Storage[1].ems
+execute if data entity @s Offers.Recipes[0].buyB{count:1} run data modify entity @s Offers.Recipes[0].buy.id set value "minecraft:emerald"
 
 #Stop travelling
 tag @s remove trader_travel
