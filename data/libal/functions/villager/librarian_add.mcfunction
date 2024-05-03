@@ -19,9 +19,8 @@ $execute store success score same_book libal.main run execute if data entity @s 
 $execute if data entity @s Offers.Recipes[$(slot)].buyB.id run data modify entity @s Offers.Recipes[$(slot)].sell.components merge value {"minecraft:custom_data":{traded:True}}
 
 #Set the trade to the books emerald value, unless the book already matches.
-$execute unless score same_book libal.main matches 0 if data storage libal:books {cost_blocks:True} run data modify entity @s Offers.Recipes[$(slot)].buy.count set from storage libal:books cost_final
-$execute unless score same_book libal.main matches 0 if data storage libal:books {cost_blocks:True} run data modify entity @s Offers.Recipes[$(slot)].buy.id set value "minecraft:emerald_block"
-$execute unless score same_book libal.main matches 0 if data storage libal:books {cost_blocks:False} run data modify entity @s Offers.Recipes[$(slot)].buy.count set from storage libal:books cost_final
+$execute unless score same_book libal.main matches 0 if data entity @s Offers.Recipes[$(slot)].buyB{count:1} run data modify entity @s Offers.Recipes[$(slot)].buy.count set from storage libal:books cost_final
+$execute unless score same_book libal.main matches 0 if data storage libal:books {cost_blocks:True} if data entity @s Offers.Recipes[$(slot)].buyB{count:1} run data modify entity @s Offers.Recipes[$(slot)].buy.id set value "minecraft:emerald_block"
 
 ## SEALED BOOK LOGIC
 execute if score sealed_books libal.main matches 1 run function libal:villager/trades/seal with storage libal:books sealed
