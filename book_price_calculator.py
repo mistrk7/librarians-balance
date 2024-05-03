@@ -32,7 +32,7 @@ def cost(level):
 
 price = (cost(lvl))*stack
 blocks = round(price/9)
-if price > 63:
+if price > 64:
     price_ = blocks
     block_type = "minecraft:emerald_block"
     #just to know what to do when implementing this
