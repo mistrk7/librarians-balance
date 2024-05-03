@@ -20,8 +20,8 @@ def cost(level):
             if key in {"minecraft:flame", "minecraft:infinity", "minecraft:multishot"}:
                 #EQUIV Level 4
                 return 38
-            if key in {"minecraft:soul_speed", "minecraft:swift_sneak","minecraft:frost_walker","minecraft:wind_burst"}:
-                #These are all sealed books
+            if key in {"minecraft:frost_walker","minecraft:fire_aspect","minecraft:soul_speed", "minecraft:swift_sneak",,"minecraft:wind_burst"}:
+                #These are mostly sealed books
                 #EQUIV Level 3
                 #Omitted: Breach & density because they are scalable
                 return 24
