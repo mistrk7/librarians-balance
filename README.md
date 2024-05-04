@@ -1,29 +1,41 @@
 ## The issue...
 
-Ever found librarians to be a little too tedious and overpowered? It's never been fun to sit there for minutes at a time, rerolling their trades to get the one you need. And it gets way too easy to obain powerful enchantments that should have reflected your dedication to the game. 
+Ever found librarians in Minecraft to be a little too tedious and overpowered? There's no risk in rerolling their trades to get the one you need. And it's just too easy to obtain powerful enchantments that should reflect your dedication to the game.
 
-I thought that this part of Minecraft really needed a rebalance, so this is what I came up with.
+I thought this part of Minecraft really needed a rebalance, so this is what I came up with.
 
 # Introducing: Librarian's Balance
 
-Librarian's Balance comes in the form of a simple datapack, and adds couple of things to solve this issue.
+Librarian's Balance is a simple datapack that solves this issue by adding a few small things.
 
 ### Featuring...
 
-1. **Customizable Trades:** Put an enchanted book on a Librarian's Lectern, and their first or second selling trade will change accordingly! This only works if they already have a book in one of those slots.
+1. **Customizable Trades:** Place an Enchanted Book on a Librarian's Lectern, and their first or second book trade will change to the one you entered. This gives new purpose to the books you collect in the world. Some books are [treasure](https://minecraft.wiki/w/Enchanting#Summary_of_enchantments) enchantments and these will produce untradable (sealed) variants when bought from a Librarian in this way.
 
-2. **Limited Trades:** Librarians' trades are capped to a level of 3. The only way of obtaining a higher level trade is by providing them with it. Combine the books you want in an Anvil, or find them in the world.
+2. **Limit Random Trades:** Default Librarian book trades are capped to a level of 3. To obtain a higher level trade, you combine two identical copies on an Anvil (ex. two Lvl 3's). This would create the upgraded copy (Lvl 4) that the Librarian needs to learn from again. It could also be taken from one found in your world. 
 
-3. **Rare Mending:** Librarians do not trade for Mending, so you'll have to find it yourself. Mending is now found more commonly in structures such as dungeons and Bastions. It's about as rare as the Otherside music disc, Soul Speed, or Swift Sneak in Ancient Cities.
+3. **Rare Mending:** Librarians do not trade for Mending so players will have to find it in the world. Mending is better found as loot in an End City or Ancient City. It roughly has the rarity of an armour trim. Once obtained, you can put it on a librarain's lectern to trade for more.
 
-Everything i've listed is completely configurable. So if you just want a selection of these things or if you want to change a value, you can!
+Everything listed here can be toggled or configured with the `/function libal:config` command (must be run as an OP). It's fully compatible with the Villager Rebalance experimental feature from Mojang. 
 
 ## Uses
 
-I imagine that this would be particlarly useful on an SMP, where you'd want to extend the midgame a little bit more to keep things interesting. After all, there's always that *one guy* who gets max everything in 2 days. Now imagine the chaos when somebody founds a source of Mending!
+On Survival Multiplayer servers. You may find enchantment progression too quick by some members of the server. Librarian's Balance provides a balanced progression system by use of experience points and requiring a proper level of exploration.
 
-### Note:
+### Feedback:
 
-You may see the UI show a mending or >3 enchantment sometimes. It's purely visual, so you can ignore it. This is my first datapack, so i'd appreciate it if you wanted to contribute or give feedback. 
+Please give feedback on the [GitHub](https://github.com/mistrk7/librarians-balance/issues) page or on my [Discord](https://discord.gg/vruTPnV) server! I'm interested in hearing your ideas, opinions or suggestions from your time with this datapack. What do you think about the sealed books system? Do you think that the Mending pricing is appropriate? 
 
-I built this datapack upon a bit of gibbsly's [Lectern Enchanting](https://www.planetminecraft.com/data-pack/lectern-enchanting/). I would SUPER like to thank him for this and some of his tutorials on YouTube, because without it I would probably have had no idea where to start on making something like this.
+### Notes:
+
+You might see the UI show a mending or >3 enchantment sometimes, but it's just a visual hitch and you should ignore it. This is my first datapack, so I'd appreciate any feedback or contributions.
+
+I built this datapack upon parts of gibbsly's [Lectern Enchanting](https://www.planetminecraft.com/data-pack/lectern-enchanting/). I want to thank him for providing a starting point for this project, and for some of his tutorials on YouTube. Otherwise I would have had no idea on where to start making something like this :).
+
+## Configuration
+
+Run:
+```
+/function libal:config
+```
+Alternatively, edit `settings.mcfunction` in the folder `data > libal > functions` (datapack only). You can view and configure 'sealed books' from here.
