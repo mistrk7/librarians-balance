@@ -2,7 +2,7 @@ import math
 # This helps to easily calculate how books are priced
 # The logic here should be mirrored in .mcfunction at the path data/libal/functions/interact/judge/calculate_price_book.mcfunction
 
-book = [{"minecraft:fire_aspect":2},{"minecraft:mending":1}]
+book = [{"minecraft:efficiency":4},{"minecraft:unbreaking":3}]
 
 # Calculate the highest level
 lvl = max(obj[next(iter(obj))] for obj in book)
