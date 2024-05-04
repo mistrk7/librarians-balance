@@ -5,7 +5,7 @@
 #In this page, control the things that this datapack modifies by ONLY changing the number at the end
 # 1=Yes, -1=No #
 
-#You can control these values by executing them as commands in-game (/function libal:options)
+#You can control these values by executing them as commands in-game (/function libal:config)
 
 ## Remove Banned Enchantments? (like mending)
 scoreboard players set no_mending libal.main 1
