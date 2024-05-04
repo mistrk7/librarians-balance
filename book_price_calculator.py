@@ -1,8 +1,8 @@
-
+import math
 # This helps to easily calculate how books are priced
 # The logic here should be mirrored in .mcfunction at the path data/libal/functions/interact/judge/calculate_price_book.mcfunction
 
-book = [{"minecraft:efficiency":4},{"minecraft:unbreaking":3}]
+book = [{"minecraft:fire_aspect":2},{"minecraft:mending":1}]
 
 # Calculate the highest level
 lvl = max(obj[next(iter(obj))] for obj in book)
@@ -11,28 +11,34 @@ lvl = max(obj[next(iter(obj))] for obj in book)
 stack = len(book)
 
 def cost(level):
-    for obj in book:
-        for key in obj.keys():
-            if key == "minecraft:mending":
-                return 52
-            if key in {"minecraft:channeling", "minecraft:aqua_affinity", "minecraft:silk_touch"}:
-                #EQUIV Level 5
-                return 48
-            if key in {"minecraft:flame", "minecraft:infinity", "minecraft:multishot"}:
-                #EQUIV Level 4
-                return 36
-            if key in {"minecraft:frost_walker","minecraft:fire_aspect","minecraft:soul_speed", "minecraft:swift_sneak","minecraft:wind_burst"}:
-                #These are mostly sealed books
-                #EQUIV Level 3
-                #Omitted: Breach & density because they are scalable
-                return 24
-    if level<4:
-        return level * 7
-    else:
-        return (level-1) * 12
+    def special_book():
+        x=0
+        for obj in book:
+            for key in obj.keys():
+                if key in {"minecraft:frost_walker","minecraft:fire_aspect","minecraft:soul_speed", "minecraft:swift_sneak","minecraft:wind_burst"}:
+                    #These are mostly sealed books
+                    x=24
+                if key in {"minecraft:flame", "minecraft:infinity", "minecraft:multishot"}:
+                    #EQUIV Level 4
+                    x=36
+                if key in {"minecraft:channeling", "minecraft:aqua_affinity", "minecraft:silk_touch"}:
+                    #EQUIV Level 5
+                    x=48
+                if key == "minecraft:mending":
+                    x=52
+        return x
+    #This part done differently in mcfunction
+    def correlating_price():
+        if level<4:
+            return level * 7
+        else:
+            return (level-1) * 12
+    return max(correlating_price(), special_book())
 
+#This part virtually identical in mcfunction
 price = (cost(lvl))*stack
-blocks = round(price/9)
+blocks = math.floor(price/9)
+# ^^ round down, like how minecraft converts
 if price > 64:
     price_ = blocks
     block_type = "minecraft:emerald_block"
