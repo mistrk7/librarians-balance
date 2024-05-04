@@ -1,7 +1,8 @@
 #For every vanilla enchantment detected, count it as the amount of enchantments on the book (oh my god). 
 ## Sorted from most important to least.
 
-scoreboard players set enchantments libal.main 0
+#Compensate forward in case there was no recognised enchantment
+scoreboard players set enchantments libal.main 1
 
 execute if items entity @s armor.legs *[minecraft:stored_enchantments~[{enchantment:"minecraft:mending"}]] run scoreboard players add enchantments libal.main 1
 execute if items entity @s armor.legs *[minecraft:stored_enchantments~[{enchantment:"minecraft:feather_falling"}]] run scoreboard players add enchantments libal.main 1
@@ -53,6 +54,9 @@ execute if items entity @s armor.legs *[minecraft:stored_enchantments~[{enchantm
 execute if items entity @s armor.legs *[minecraft:stored_enchantments~[{enchantment:"minecraft:bane_of_arthropods"}]] run scoreboard players add enchantments libal.main 1
 execute if items entity @s armor.legs *[minecraft:stored_enchantments~[{enchantment:"minecraft:vanishing_curse"}]] run scoreboard players add enchantments libal.main 1
 execute if items entity @s armor.legs *[minecraft:stored_enchantments~[{enchantment:"minecraft:binding_curse"}]] run scoreboard players add enchantments libal.main 1
+
+#Compensate back in case there was no recognised enchantment
+scoreboard players remove enchantments libal.main 1
 
 #Proceed to calculate the emerald price of the book
 function libal:interact/judge/calculate_price_book
