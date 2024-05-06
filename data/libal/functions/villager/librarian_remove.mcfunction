@@ -18,6 +18,10 @@ execute if data entity @s Offers.Recipes[1].buyB{count:1} run data modify entity
 execute if data entity @s Offers.Recipes[0].buyB{count:1} run data modify entity @s Offers.Recipes[0].buy.count set from entity @s ArmorItems[0].components."minecraft:custom_data".Storage[1].ems
 execute if data entity @s Offers.Recipes[0].buyB{count:1} run data modify entity @s Offers.Recipes[0].buy.id set value "minecraft:emerald"
 
+#Changes price multiplier back to the original
+execute if data entity @s Offers.Recipes[1].buyB{count:1} run data modify entity @s Offers.Recipes[1].priceMultiplier set from entity @s ArmorItems[0].components."minecraft:custom_data".Storage[1].priceMultiplier
+execute if data entity @s Offers.Recipes[0].buyB{count:1} run data modify entity @s Offers.Recipes[0].priceMultiplier set from entity @s ArmorItems[0].components."minecraft:custom_data".Storage[1].priceMultiplier
+
 #Stop travelling
 tag @s remove trader_travel
 data remove entity @s Brain.memories."minecraft:potential_job_site"
