@@ -2,7 +2,7 @@
 scoreboard objectives add libal.main dummy
 
 #load settings (remove execute condition for debug)
-execute unless score #m libal.main matches -1 run schedule function libal:settings 8t
+execute unless score #m libal.main matches -1 run function libal:settings
 
 #toggle multiplier
 scoreboard players set #m libal.main -1
