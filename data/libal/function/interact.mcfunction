@@ -1,6 +1,9 @@
 #revoking advancement
 advancement revoke @s only libal:interact
 
+#load settings if libal:load failed to initiate (ex. in heavily modded instances)
+execute unless score #m libal.main matches -1 run function libal:settings
+
 #remembering book
 data modify storage libal:books bookEnch set from entity @s SelectedItem.components."minecraft:stored_enchantments".levels
 
