@@ -1,7 +1,7 @@
 
 scoreboard players set book_illegal libal.main 0
 
-#Check for blacklisted books.
+#Check for blacklisted books (vanilla).
 $execute if score book_illegal libal.main matches 0 run execute store success score book_illegal libal.main run data get entity @s SelectedItem.components."minecraft:stored_enchantments".levels.$(1)
 $execute if score book_illegal libal.main matches 0 run execute store success score book_illegal libal.main run data get entity @s SelectedItem.components."minecraft:stored_enchantments".levels.$(2)
 $execute if score book_illegal libal.main matches 0 run execute store success score book_illegal libal.main run data get entity @s SelectedItem.components."minecraft:stored_enchantments".levels.$(3)

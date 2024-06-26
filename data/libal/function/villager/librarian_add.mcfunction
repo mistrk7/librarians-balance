@@ -1,6 +1,5 @@
 #Add 'trader' tag to Villager
 tag @s add trader
-tag @s remove trader_travel
 
 #Add 'button' item in Villager ArmorItem#0 to store the current Book data
 data modify entity @s ArmorItems[0] set value {id:"minecraft:stone_button",components:{"minecraft:custom_data":{Storage:[{},{ems:0,priceMultiplier:0}]}}}
