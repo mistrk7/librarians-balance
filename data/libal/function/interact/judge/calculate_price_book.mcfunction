@@ -38,7 +38,6 @@ execute if items entity @s armor.legs *[minecraft:stored_enchantments~[{enchantm
 
 # TIER 1 - 52 Emeralds (basically just mending)
 execute if items entity @s armor.legs *[minecraft:stored_enchantments~[{enchantments:"minecraft:mending"}]] run scoreboard players set price libal.main 52
-scoreboard players reset book_level libal.main
 
 ## Multiply price by the number of stacked enchantments on the book
 scoreboard players operation price libal.main *= enchantments libal.main
