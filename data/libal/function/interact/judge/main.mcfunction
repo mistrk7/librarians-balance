@@ -1,12 +1,11 @@
 
-#Judge blacklist
-function libal:interact/judge/blacklist with storage libal:books blacklist
-
 #Judge enchanted book (for info) as villager. This ultimately gets the cost_final that the book is valued in emeralds.
 $execute if score #tomereader libal.main matches 0 run data modify entity @e[limit=1,type=minecraft:villager,nbt={VillagerData:{profession:"minecraft:librarian"},Brain:{memories:{"minecraft:job_site":{value:{pos:$(cord)}}}}}] ArmorItems[1] set from entity @s SelectedItem
 $execute if score #tomereader libal.main matches 1 run data modify entity @e[limit=1,type=minecraft:villager,nbt={VillagerData:{profession:"minecraft:librarian"},Brain:{memories:{"minecraft:job_site":{value:{pos:$(cord)}}}}}] ArmorItems[1] set from block ~ ~ ~ Book
 $execute as @e[limit=1,type=minecraft:villager,nbt={VillagerData:{profession:"minecraft:librarian"},Brain:{memories:{"minecraft:job_site":{value:{pos:$(cord)}}}}}] run function libal:interact/judge/level_book 
 
+#Judge blacklist
+$execute as @e[limit=1,type=minecraft:villager,nbt={VillagerData:{profession:"minecraft:librarian"},Brain:{memories:{"minecraft:job_site":{value:{pos:$(cord)}}}}}] run function libal:interact/judge/blacklist with storage libal:books blacklist
 
 #If book level isn't recognised, invalidate and tell the player
 execute if score book_level libal.main matches 0 run title @p[sort=nearest, limit=1] actionbar {"text":"This book is too complex.","color":"red"}
