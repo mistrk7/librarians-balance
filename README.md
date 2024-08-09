@@ -29,7 +29,7 @@ Right-clicking a lectern with an enchanted book sets it into the block while cha
 
 In my datapack, the '**sealed**' books system was created to prevent perpetual duplication of an enchantment that required individual effort in obtaining it. For example Minecraft has Soul Speed, Wind Burst and Swift Sneak; three enchantments designed to reward players who sought the challenges where they reside. With customisable trades, enchantment individuality can become trivial when all you need to get more is to place the enchantment on the lectern and trade for more with emeralds.  
 
-**Sealed books** are designed to keep a books value throughout a server's economy. It's up to the founding player on how they want to distribute them.
+**Sealed books** are designed to keep a books value throughout a server economy. It's up to the founding player on how they want to distribute them.
 
 Most books that get sealed fit the description of 'treasure enchantments', which in Minecraft are enchantments that you can't get through villagers, not obtainable on an enchantment table, but that you could find as loot in the world. The definition has changed a little bit now, but that doesn't matter because to me these are books that are just uniquely obtained and are exclusive to the players who get them.
 
