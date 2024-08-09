@@ -57,7 +57,7 @@ Run:
 ```
 /function libal:config
 ```
-![image](https://github.com/user-attachments/assets/5a32ea52-0587-4384-a745-1b4f444aff9a)
+![image](https://github.com/user-attachments/assets/42d7e286-8357-4f3c-a824-5f21b6b47c41)
 
 Alternatively, edit `settings.mcfunction` in the folder `data > libal > functions` (datapack only). You can view and configure 'sealed books' from here.
 
