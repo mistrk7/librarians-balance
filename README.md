@@ -2,7 +2,7 @@
 
 Librarian's Balance is a Minecraft datapack that integrates custom trading into vanilla, applies a couple of tweaks to loot tables, and runs functions that tweak the trading system. This description will describe most of the features in this datapack in some detail.
 
-## Visual overview of the core concept to balance Librarians (please read to learn more!)
+## Visual overview of the core concept to balance Librarians
 
 <p align="center">
     <img src="https://github.com/user-attachments/assets/65af2e7b-9860-45b1-858c-40bbbf6c2b34" alt="Trade cycle" width="500"/>
