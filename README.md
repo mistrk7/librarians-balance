@@ -10,7 +10,7 @@ Librarian's Balance is a Minecraft datapack that integrates custom trading into 
 
 ## Customisable Trades
 
-Right-clicking a lectern with an enchanted book sets it into the block while changing the first enchanted book in the librarian's trade. From there, the **Emerald** price is calculated based on two parameters from that book; the **best enchantment** & the **number of enchantments**, using a formula that you can find in the file (book_price_calculator.py). The actual logic is ported into (calculate_price_book.mcfunction) because it's easier to prototype the functionality in Python before bringing it over in game. To learn how that works you can look at the code, but a simple explanation is below.
+Place an Enchanted Book on a Librarian's Lectern, and their first or second book trade will change to the one you entered. From there, the **emerald** price is calculated based on two parameters from that book; the **best enchantment** & the **number of enchantments**, using a formula that you can find in the file (book_price_calculator.py). The actual logic is ported into (calculate_price_book.mcfunction) because it's easier to prototype the functionality in Python before bringing it over in game. To learn how that works you can look at the code, but a simple explanation is below.
 <h6>(spoilers, maybe??)</h6>
 
 ### Price of enchantment = price(best enchantment) * number of enchantments </h3>
