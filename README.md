@@ -1,41 +1,67 @@
-## The issue...
+## Librarian's Balance
 
-Ever found librarians in Minecraft to be a little too tedious and overpowered? There's no risk in rerolling their trades to get the one you need. And it's just too easy to obtain powerful enchantments that should reflect your dedication to the game.
+Librarian's Balance is a Minecraft datapack that integrates custom trading into vanilla, applies a couple of tweaks to loot tables, and runs functions that tweak the trading system. This description will describe most of the features in this datapack in some detail.
 
-I thought this part of Minecraft really needed a rebalance, so this is what I came up with.
+## Visual overview of the core concept to balance Librarians
 
-# Introducing: Librarian's Balance
+<p align="center">
+    <img src="https://github.com/user-attachments/assets/65af2e7b-9860-45b1-858c-40bbbf6c2b34" alt="Trade cycle" width="500"/>
+</p>
 
-Librarian's Balance is a simple datapack that solves this issue by adding a few small things.
+## Customisable Trades
 
-### Featuring...
+Place an Enchanted Book on a Librarian's Lectern, and their first or second book trade will change to the one you entered. From there, the **emerald** price is calculated based on two parameters from that book; the **best enchantment** & the **number of enchantments**, using a formula that you can find in the file (book_price_calculator.py). The actual logic is ported into (calculate_price_book.mcfunction) because it's easier to prototype the functionality in Python before bringing it over in game. To learn how that works you can look at the code, but a simple explanation is below.
+<h6>(spoilers, maybe??)</h6>
 
-1. **Customizable Trades:** Place an Enchanted Book on a Librarian's Lectern, and their first or second book trade will change to the one you entered. This gives new purpose to the books you collect in the world. Some books are [treasure](https://minecraft.wiki/w/Enchanting#Summary_of_enchantments) enchantments and these will produce untradable (sealed) variants when bought from a Librarian in this way.
+### Price of enchantment = price(best enchantment) * number of enchantments </h3>
 
-2. **Limit Random Trades:** Default Librarian book trades are capped to a level of 3. To obtain a higher level trade, you combine two identical copies on an Anvil (ex. two Lvl 3's). This would create the upgraded copy (Lvl 4) that the Librarian needs to learn from again. It could also be taken from one found in your world. 
+- The '**best enchantment**' is usually the highest level the book has correlating to a price (below)
+  ##### Level 1 = 7 Emeralds  |  Level 2 = 14 Emeralds  |  Level 3 = 21 Emeralds  |  Level 4 = 36 Emeralds  |  Level 5 = 48 Emeralds
+- Otherwise if it's one of the following special enchantments, that price is overwritten into the 'best enchantment' value.
+  <h5> frost_walker, fire_aspect, soul_speed, swift_sneak, wind_burst... = 24 EMERALDS </h5>
+  <h5> flame, infinity, multishot... = 36 EMERALDS </h5>
+  <h5> channeling, aqua_affinity, silk_touch... = 48 EMERALDS </h5>
+  <h5> mending... = 52 EMERALDS </h5>
+- The '**number of enchantments**' works by counting all the vanilla enchantments present. That number is then multiplied by the best enchantment's price to get the final price. Sadly **custom enchantments** do not count. This is a limitation with the datapack.
+- If it's above 64, then it gets divided by 9 rounded to the lowest denominator, and converted into Emerald Blocks. Discounts get removed.
 
-3. **Rare Mending:** Librarians do not trade for Mending so players will have to find it in the world. Mending is better found as loot in an End City or Ancient City. It roughly has the rarity of an armour trim. Once obtained, you can put it on a librarain's lectern to trade for more.
+## Treasure Enchantments & Sealed Books
 
-Everything listed here can be toggled or configured with the `/function libal:config` command (must be run as an OP). It's fully compatible with the Villager Rebalance experimental feature from Mojang. 
+With customisable trades, enchantment individuality can become trivial when all you need to get more is to place the book down and trade for more with emeralds. The '**sealed**' books system was created to prevent others from duplicating duplicates of treasured enchantments like Wind Burst or Soul Speed. Their copies are labelled as 'Sealed' and can't be placed on lecterns, meaning that their exclusive purpose is to apply on gear. 
 
-## Uses
+**Sealed books** are designed to keep enchantments valuable throughout a server economy. If a master enchantment book produces sealed variants, it's up to the player how they want to distribute it.
 
-On Survival Multiplayer servers. You may find enchantment progression too quick by some members of the server. Librarian's Balance provides a balanced progression system by use of experience points and requiring a proper level of exploration.
+Enchanted books that get sealed fit the description of 'treasure enchantments', which in Minecraft are what you can't get through villagers, not obtainable on an enchantment table, but that you can find as loot in the world. The definition has changed a little bit now but that doesn't matter because to me these are books that are uniquely obtained and exclusive to the players who get them.
 
-### Feedback:
+Books that are affected by the 'sealed' books system once traded are the following:
 
-Please give feedback on the [GitHub](https://github.com/mistrk7/librarians-balance/issues) page or on my [Discord](https://discord.gg/vruTPnV) server! I'm interested in hearing your ideas, opinions or suggestions from your time with this datapack. What do you think about the sealed books system? Do you think that the Mending pricing is appropriate? 
+- Soul Speed  -  Unique to Piglin Bartering
+- Swift Sneak  -  Unique to Ancient Cities
+- Wind Burst  -  Unique to Trial Chambers
+- Curse of Binding & Vanishing  -  Unique to trolls?
+- Frost Walker  -  Was a treasure enchantment at one point
 
-### Notes:
+One notable exception is Mending. We had Mending as a sealed variant at one point, but because of how necessary it is to the core game and how difficult the datapack makes obtaining it (will talk about this later), it was voted against. 
 
-You might see the UI show a mending or >3 enchantment sometimes, but it's just a visual hitch and you should ignore it. This is my first datapack, so I'd appreciate any feedback or contributions.
+## Tweaks to Villager Trades
+Librarian's Balance makes tweaks to trading to better support the custom trade system and the progression of obtaining enchantments through villagers.  
 
-I built this datapack upon parts of gibbsly's [Lectern Enchanting](https://www.planetminecraft.com/data-pack/lectern-enchanting/). I want to thank him for providing a starting point for this project, and for some of his tutorials on YouTube. Otherwise I would have had no idea on where to start making something like this :).
+- Default Librarian enchanted book trades can only be random up to level 3. Normally this goes up to level 5 which meant you could get the best enchantment books by doing nothing. This change works in conjunction with custom trades so that you have to use enchantment points to combine lower level books in an anvil with librarians on lecterns to work your way up to higher level enchantments, or explore to find one as loot in the world
+ 
+- **Mending** cannot be obtained through villagers anymore. It is exclusive to two specific locations in the game being **Ancient Cities** and **End Cities**. This makes it uniquely obtained and exclusive to the players who get them (a treasure enchantment), and is how I imagine Mending would be implemented in the modern day just like Swift Sneak, Soul Speed or Wind Burst.      
+
+The function that runs these filters happens on every villager every time one is right clicked.  
 
 ## Configuration
-
 Run:
 ```
 /function libal:config
 ```
+![image](https://github.com/user-attachments/assets/42d7e286-8357-4f3c-a824-5f21b6b47c41)
+
 Alternatively, edit `settings.mcfunction` in the folder `data > libal > functions` (datapack only). You can view and configure 'sealed books' from here.
+
+## Links
+
+### [Modrinth](https://modrinth.com/datapack/librarians-balance)
+### [Discord server](https://discord.gg/vruTPnV)
