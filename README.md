@@ -27,11 +27,11 @@ Place an Enchanted Book on a Librarian's Lectern, and their first or second book
 
 ## Treasure Enchantments & Sealed Books
 
-In my datapack, the '**sealed**' books system was created to prevent perpetual duplication of an enchantment that required individual effort in obtaining it. For example Minecraft has Soul Speed, Wind Burst and Swift Sneak; three enchantments designed to reward players who sought the challenges where they reside. With customisable trades, enchantment individuality can become trivial when all you need to get more is to place the enchantment on the lectern and trade for more with emeralds.  
+With customisable trades, enchantment individuality can become trivial when all you need to get more is to place the book down and trade for more with emeralds. The '**sealed**' books system was created to prevent perpetual duplication of treasured enchantments like Wind Burst or Soul Speed. Their copies are labelled as 'Sealed' and can't be placed on lecterns, meaning that their exclusive purpose is to apply on gear. 
 
-**Sealed books** are designed to keep a books value throughout a server economy. It's up to the founding player on how they want to distribute them.
+**Sealed books** are designed to keep enchantments valuable throughout a server economy. If a master enchantment book produces sealed variants, it's up to the player how they want to distribute it.
 
-Most books that get sealed fit the description of 'treasure enchantments', which in Minecraft are enchantments that you can't get through villagers, not obtainable on an enchantment table, but that you could find as loot in the world. The definition has changed a little bit now, but that doesn't matter because to me these are books that are just uniquely obtained and are exclusive to the players who get them.
+Enchanted books that get sealed fit the description of 'treasure enchantments', which in Minecraft are what you can't get through villagers, not obtainable on an enchantment table, but that you can find as loot in the world. The definition has changed a little bit now but that doesn't matter because to me, these are books that are uniquely obtained and exclusive to the players who get them.
 
 Books that are affected by the 'sealed' books system once traded are the following:
 
