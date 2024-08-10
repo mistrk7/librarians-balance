@@ -31,7 +31,7 @@ With customisable trades, enchantment individuality can become trivial when all 
 
 **Sealed books** are designed to keep enchantments valuable throughout a server economy. If a master enchantment book produces sealed variants, it's up to the player how they want to distribute it.
 
-Enchanted books that get sealed fit the description of 'treasure enchantments', which in Minecraft are what you can't get through villagers, not obtainable on an enchantment table, but that you can find as loot in the world. The definition has changed a little bit now but that doesn't matter because to me, these are books that are uniquely obtained and exclusive to the players who get them.
+Enchanted books that get sealed fit the description of 'treasure enchantments', which in Minecraft are what you can't get through villagers, not obtainable on an enchantment table, but that you can find as loot in the world. The definition has changed a little bit now but that doesn't matter because to me these are books that are uniquely obtained and exclusive to the players who get them.
 
 Books that are affected by the 'sealed' books system once traded are the following:
 
