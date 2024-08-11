@@ -18,10 +18,10 @@ Place an Enchanted Book on a Librarian's Lectern, and their first or second book
 - The '**best enchantment**' is usually the highest level the book has correlating to a price (below)
   ##### Level 1 = 7 Emeralds  |  Level 2 = 14 Emeralds  |  Level 3 = 21 Emeralds  |  Level 4 = 36 Emeralds  |  Level 5 = 48 Emeralds
 - Otherwise if it's one of the following special enchantments, that price is overwritten into the 'best enchantment' value.
-  <h6> frost_walker, fire_aspect, soul_speed, swift_sneak, wind_burst... = 24 EMERALDS </h6>
-  <h6> flame, infinity, multishot... = 36 EMERALDS </h6>
-  <h6> channeling, aqua_affinity, silk_touch... = 48 EMERALDS </h6>
-  <h6> mending... = 52 EMERALDS </h6>
+  <h5> frost_walker, fire_aspect, soul_speed, swift_sneak, wind_burst... = 24 EMERALDS </h5>
+  <h5> flame, infinity, multishot... = 36 EMERALDS </h5>
+  <h5> channeling, aqua_affinity, silk_touch... = 48 EMERALDS </h5>
+  <h5> mending... = 52 EMERALDS </h5>
 - The '**number of enchantments**' works by counting all the vanilla enchantments present. That number is then multiplied by the best enchantment's price to get the final price. Sadly **custom enchantments** do not count. This is a limitation with the datapack.
 - If it's above 64, then it gets divided by 9 rounded to the lowest denominator, and converted into Emerald Blocks. Discounts get removed.
 
