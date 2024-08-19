@@ -27,7 +27,7 @@ Place an Enchanted Book on a Librarian's Lectern, and their first or second book
 
 ## Treasure Enchantments & Sealed Books
 
-With customisable trades, enchantment individuality can become trivial when all you need to get more is to place the book down and trade for more with emeralds. The '**sealed**' books system was created to prevent perpetual duplication of treasured enchantments like Wind Burst or Soul Speed. Their copies are labelled as 'Sealed' and can't be placed on lecterns, meaning that their exclusive purpose is to apply on gear. 
+With customisable trades, enchantment individuality can become trivial when all you need to get more is to place the book down and trade for more with emeralds. The '**sealed**' books system was created to prevent others from duplicating duplicates of treasured enchantments like Wind Burst or Soul Speed. Their copies are labelled as 'Sealed' and can't be placed on lecterns, meaning that their exclusive purpose is to apply on gear. 
 
 **Sealed books** are designed to keep enchantments valuable throughout a server economy. If a master enchantment book produces sealed variants, it's up to the player how they want to distribute it.
 
