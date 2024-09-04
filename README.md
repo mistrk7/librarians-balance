@@ -24,6 +24,7 @@ Place an Enchanted Book on a Librarian's Lectern, and their first or second book
   <h5> mending... = 52 EMERALDS </h5>
 - The '**number of enchantments**' works by counting all the vanilla enchantments present. That number is then multiplied by the best enchantment's price to get the final price. Sadly **custom enchantments** do not count. This is a limitation with the datapack.
 - If it's above 64, then it gets divided by 9 rounded to the lowest denominator, and converted into Emerald Blocks. Discounts get removed.
+- If a price can't be placed the book is invalidated and classed as 'too complex'
 
 ## Treasure Enchantments & Sealed Books
 
