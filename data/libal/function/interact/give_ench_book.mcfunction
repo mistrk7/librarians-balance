@@ -5,6 +5,3 @@ execute if score #tomereader libal.main matches 0 run function libal:interact/bo
 #Remove a librarian from custom trading... Condition = remove a villager
 scoreboard players set condition libal.main 0
 execute as @e[limit=1,sort=nearest,type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] run function libal:villager/librarian_find with storage libal:jobs_find
-
-#Filter Illegal Trades
-execute as @e[type=villager,nbt={VillagerData:{profession:"minecraft:librarian"},Offers:{Recipes:[{sell:{id:"minecraft:enchanted_book"}}]}},tag=!trader] run function libal:filter

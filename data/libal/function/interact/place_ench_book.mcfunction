@@ -1,4 +1,3 @@
-
 #place book if no mod
 execute if score #tomereader libal.main matches 0 run function libal:interact/book/place with storage libal:jobs_find
 
