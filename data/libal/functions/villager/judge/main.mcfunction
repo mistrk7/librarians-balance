@@ -10,7 +10,7 @@ execute if score book_level libal.main matches 0 run execute positioned ~ ~ ~ ru
 execute if score book_level libal.main matches 0 run execute positioned ~ ~ ~ run playsound entity.villager.work_cartographer block @a ~ ~ ~ 0.1
 
 #If book is sealed invalidate and tell the player.
-execute if data block ~ ~ ~ Book.tag{sealed:1b} run title @p[sort=nearest, limit=1] actionbar ["",{"text":"This book is "},{"text":"Sealed","color":"blue"},{"text":". "},{"selector":"@s"},{"text":" can't read it."}]
+execute if data block ~ ~ ~ Book.tag{sealed:1b} run title @p[sort=nearest, limit=1] actionbar ["",{"text":"This book is "},{"text":"sealed"},{"text":". "},{"selector":"@s"},{"text":" can't read it."}]
 execute if data block ~ ~ ~ Book.tag{sealed:1b} positioned ~ ~ ~ run playsound block.chiseled_bookshelf.pickup.enchanted block @a
 
 #If book is legal and valid, add villager. 
