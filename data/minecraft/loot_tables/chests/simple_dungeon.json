@@ -56,21 +56,22 @@
         },
         {
           "type": "minecraft:item",
+          "weight": 2,
+          "name": "minecraft:book",
           "functions": [
             {
               "function": "minecraft:enchant_randomly",
-              "options": "minecraft:mending"
+              "enchantments": [
+                "minecraft:mending"
+              ]
             }
-          ],
-          "name": "minecraft:book",
-          "weight": 2
+          ]
         },
         {
           "type": "minecraft:item",
           "functions": [
             {
-              "function": "minecraft:enchant_randomly",
-              "options": "#minecraft:on_random_loot"
+              "function": "minecraft:enchant_randomly"
             }
           ],
           "name": "minecraft:book",

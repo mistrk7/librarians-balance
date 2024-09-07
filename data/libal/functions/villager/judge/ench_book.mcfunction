@@ -58,4 +58,4 @@ execute if data entity @s ArmorItems[1].tag.StoredEnchantments[{id:"minecraft:bi
 execute if score enchantments libal.main matches 0 run scoreboard players add enchantments libal.main 1
 
 #Proceed to calculate the emerald price of the book
-function libal:interact/judge/calculate_price_book
+function libal:villager/judge/calculate_price_book

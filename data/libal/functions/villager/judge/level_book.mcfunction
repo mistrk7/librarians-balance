@@ -11,4 +11,4 @@ execute if data entity @s ArmorItems[1].tag.StoredEnchantments[{lvl:4s}] run sco
 execute if data entity @s ArmorItems[1].tag.StoredEnchantments[{lvl:5s}] run scoreboard players set book_level libal.main 5
 
 #Proceed to count the number of enchantments on the book
-function libal:interact/judge/ench_book with storage libal:books
+function libal:villager/judge/ench_book

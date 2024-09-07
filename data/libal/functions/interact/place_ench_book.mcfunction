@@ -1,9 +1,16 @@
-#place book if no mod
-execute if score #tomereader libal.main matches 0 run function libal:interact/book/place with storage libal:jobs_find
+#updating blockstate
+execute if block ~ ~ ~ minecraft:lectern[facing=east] run setblock ~ ~ ~ minecraft:lectern[facing=east,has_book=true]
+execute if block ~ ~ ~ minecraft:lectern[facing=west] run setblock ~ ~ ~ minecraft:lectern[facing=west,has_book=true]
+execute if block ~ ~ ~ minecraft:lectern[facing=north] run setblock ~ ~ ~ minecraft:lectern[facing=north,has_book=true]
+execute if block ~ ~ ~ minecraft:lectern[facing=south] run setblock ~ ~ ~ minecraft:lectern[facing=south,has_book=true]
+
+#placing data
+data modify block ~ ~ ~ Book set from entity @s SelectedItem
+item replace entity @s weapon.mainhand with air
 
 #effects
 execute align xyz positioned ~0.5 ~0.5 ~0.5 run playsound minecraft:item.book.put block @a
 
 #Add a librarian for custom trading! Condition = Add a villager
 scoreboard players set condition libal.main 1
-function libal:villager/librarian_find with storage libal:jobs_find
+execute as @e[limit=1,sort=nearest,type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] run function libal:villager/librarian_find

@@ -2,7 +2,7 @@
 scoreboard objectives add libal.main dummy
 
 #update message on upgrade
-execute unless score #v libal.main matches 34 run tellraw @a ["",{"text":"[Librarian's Balance]","color":"dark_green","clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/librarians-balance"},"hoverEvent":{"action":"show_text","contents":"Datapack / Mod"}},{"text":" In this version your settings have been reset. "},{"text":"Reconfigure","color":"aqua","clickEvent":{"action":"run_command","value":"/function libal:config"},"hoverEvent":{"action":"show_text","contents":"/function libal:config"}},{"text":" if you made important changes."}]
+execute if score #m libal.main matches -1 unless score #v libal.main matches 34 run tellraw @a ["",{"text":"[Librarian's Balance]","color":"dark_green","clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/librarians-balance"},"hoverEvent":{"action":"show_text","contents":"Datapack / Mod"}},{"text":" In this version your settings have been reset. "},{"text":"Reconfigure","color":"aqua","clickEvent":{"action":"run_command","value":"/function libal:config"},"hoverEvent":{"action":"show_text","contents":"/function libal:config"}},{"text":" if you made important changes."}]
 
 #load settings (remove execute condition for debug)
 execute unless score #v libal.main matches 34 run function libal:settings
@@ -14,7 +14,7 @@ scoreboard players set #v libal.main 34
 scoreboard players set #m libal.main -1
 
 #List of possible enchantments to replace Mending with
-data merge storage libal:books {replacements:[{id:"minecraft:bane_of_arthropods",lvl:1s},{id:"minecraft:smite",lvl:1s},{id:"minecraft:bane_of_arthropods",lvl:ss}]}
+data merge storage libal:books {Books:["minecraft:flame","minecraft:multishot","minecraft:silk_touch"]}
 
 #Storage data for finding the villager
-data merge storage libal:jobs_find {cord:[I; 0, 0, 0]}
+data merge storage libal:jobs_find {cord:[0,0,0],vcord:[0,0,0]}

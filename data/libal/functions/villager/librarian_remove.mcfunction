@@ -1,6 +1,5 @@
 #Remove 'trader' tag to Villager
 tag @s remove trader
-scoreboard players reset condition libal.main
 #say Bye :(
 
 #Play Particles and Sound
@@ -21,10 +20,6 @@ execute if data entity @s Offers.Recipes[0].buyB{Count:1b} run data modify entit
 #Changes price multiplier back to the original
 execute if data entity @s Offers.Recipes[1].buyB{Count:1b} run data modify entity @s Offers.Recipes[1].priceMultiplier set from entity @s ArmorItems[0].tag.Storage[1].priceMultiplier
 execute if data entity @s Offers.Recipes[0].buyB{Count:1b} run data modify entity @s Offers.Recipes[0].priceMultiplier set from entity @s ArmorItems[0].tag.Storage[1].priceMultiplier
-
-#Stop travelling
-tag @s remove trader_travel
-data remove entity @s Brain.memories."minecraft:potential_job_site"
 
 #Remove the button item used for data storing
 data remove entity @s ArmorItems[0]
