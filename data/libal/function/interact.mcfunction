@@ -5,7 +5,7 @@ advancement revoke @s only libal:interact
 execute unless score #m libal.main matches -1 run function libal:load
 
 #remembering book
-data modify storage libal:books bookEnch set from entity @s SelectedItem.components."minecraft:stored_enchantments".levels
+#data modify storage libal:books bookEnch set from entity @s SelectedItem.tag.StoredEnchantments[]
 
 #finding lectern
 scoreboard players set dist= libal.main 501

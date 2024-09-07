@@ -18,26 +18,26 @@ execute if score book_level libal.main matches 3 run scoreboard players set pric
 
 ## Overwrite the price if there is a special book, & continue calculating higher books.
 # TIER 4 - 24 Emeralds (mostly sealed books). By design, two stacked Tier 4 enchants should equal to the price of a level 5 book. 
-execute if items entity @s armor.legs *[minecraft:stored_enchantments~[{enchantments:"minecraft:frost_walker"}]] run scoreboard players set price libal.main 24
-execute if items entity @s armor.legs *[minecraft:stored_enchantments~[{enchantments:"minecraft:fire_aspect"}]] run scoreboard players set price libal.main 24
-execute if items entity @s armor.legs *[minecraft:stored_enchantments~[{enchantments:"minecraft:soul_speed"}]] run scoreboard players set price libal.main 24
-execute if items entity @s armor.legs *[minecraft:stored_enchantments~[{enchantments:"minecraft:swift_sneak"}]] run scoreboard players set price libal.main 24
-execute if items entity @s armor.legs *[minecraft:stored_enchantments~[{enchantments:"minecraft:wind_burst"}]] run scoreboard players set price libal.main 24
+execute if data entity @s ArmorItems[1].tag.StoredEnchantments[{id:"minecraft:frost_walker"}] run scoreboard players set price libal.main 24
+execute if data entity @s ArmorItems[1].tag.StoredEnchantments[{id:"minecraft:fire_aspect"}] run scoreboard players set price libal.main 24
+execute if data entity @s ArmorItems[1].tag.StoredEnchantments[{id:"minecraft:soul_speed"}] run scoreboard players set price libal.main 24
+execute if data entity @s ArmorItems[1].tag.StoredEnchantments[{id:"minecraft:swift_sneak"}] run scoreboard players set price libal.main 24
+execute if data entity @s ArmorItems[1].tag.StoredEnchantments[{id:"minecraft:wind_burst"}] run scoreboard players set price libal.main 24
 
 # TIER 3 - 36 Emeralds (or a level 4 book)
 execute if score book_level libal.main matches 4 run scoreboard players set price libal.main 36
-execute if items entity @s armor.legs *[minecraft:stored_enchantments~[{enchantments:"minecraft:flame"}]] run scoreboard players set price libal.main 36
-execute if items entity @s armor.legs *[minecraft:stored_enchantments~[{enchantments:"minecraft:infinity"}]] run scoreboard players set price libal.main 36
-execute if items entity @s armor.legs *[minecraft:stored_enchantments~[{enchantments:"minecraft:multishot"}]] run scoreboard players set price libal.main 36
+execute if data entity @s ArmorItems[1].tag.StoredEnchantments[{id:"minecraft:flame"}] run scoreboard players set price libal.main 36
+execute if data entity @s ArmorItems[1].tag.StoredEnchantments[{id:"minecraft:infinity"}] run scoreboard players set price libal.main 36
+execute if data entity @s ArmorItems[1].tag.StoredEnchantments[{id:"minecraft:multishot"}] run scoreboard players set price libal.main 36
 
 # TIER 2 - 48 Emeralds (or a level 5 book)
 execute if score book_level libal.main matches 5 run scoreboard players set price libal.main 48
-execute if items entity @s armor.legs *[minecraft:stored_enchantments~[{enchantments:"minecraft:channeling"}]] run scoreboard players set price libal.main 48
-execute if items entity @s armor.legs *[minecraft:stored_enchantments~[{enchantments:"minecraft:aqua_affinity"}]] run scoreboard players set price libal.main 48
-execute if items entity @s armor.legs *[minecraft:stored_enchantments~[{enchantments:"minecraft:silk_touch"}]] run scoreboard players set price libal.main 48
+execute if data entity @s ArmorItems[1].tag.StoredEnchantments[{id:"minecraft:channeling"}] run scoreboard players set price libal.main 48
+execute if data entity @s ArmorItems[1].tag.StoredEnchantments[{id:"minecraft:aqua_affinity"}] run scoreboard players set price libal.main 48
+execute if data entity @s ArmorItems[1].tag.StoredEnchantments[{id:"minecraft:silk_touch"}] run scoreboard players set price libal.main 48
 
 # TIER 1 - 52 Emeralds (basically just mending)
-execute if items entity @s armor.legs *[minecraft:stored_enchantments~[{enchantments:"minecraft:mending"}]] run scoreboard players set price libal.main 52
+execute if data entity @s ArmorItems[1].tag.StoredEnchantments[{id:"minecraft:mending"}] run scoreboard players set price libal.main 52
 
 ## Multiply price by the number of stacked enchantments on the book
 scoreboard players operation price libal.main *= enchantments libal.main

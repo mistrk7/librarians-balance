@@ -14,7 +14,7 @@ scoreboard players set #v libal.main 34
 scoreboard players set #m libal.main -1
 
 #List of possible enchantments to replace Mending with
-data merge storage libal:books {replacements:[{"minecraft:bane_of_arthropods":1},{"minecraft:smite":1},{"minecraft:loyalty":1}]}
+data merge storage libal:books {replacements:[{id:"minecraft:bane_of_arthropods",lvl:1s},{id:"minecraft:smite",lvl:1s},{id:"minecraft:bane_of_arthropods",lvl:ss}]}
 
 #Storage data for finding the villager
 data merge storage libal:jobs_find {cord:[I; 0, 0, 0]}
