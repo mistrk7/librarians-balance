@@ -10,25 +10,26 @@ Librarian's Balance is a Minecraft datapack that integrates custom trading into 
 
 ## Customisable Trades
 
-Place an Enchanted Book on a Librarian's Lectern, and their first or second book trade will change to the one you entered. From there, the **emerald** price is calculated based on two parameters from that book; the **best enchantment** & the **number of enchantments**, using a formula that you can find in the file (book_price_calculator.py). The actual logic is ported into (calculate_price_book.mcfunction) because it's easier to prototype the functionality in Python before bringing it over in game. To learn how that works you can look at the code, but a simple explanation is below.
+Enchanted books are placeable on lecterns. Librarians adapt their enchanted book trade to what's on their lectern. The **emerald** price gets updated based on two parameters from that book; the **best enchantment** & the **number of enchantments**. A simple explanation is below. The logic was written in Python before I ported it over to mcfunction. 
 <h6>(spoilers, maybe??)</h6>
 
 ### Price of enchantment = price(best enchantment) * number of enchantments </h3>
 
-- The '**best enchantment**' is usually the highest level the book has correlating to a price (below)
+- The '**number of enchantments**' is a count of vanilla enchantments on the book.
+- The '**best enchantment**' is the price of the highest level enchantment on a book (below)
   ##### Level 1 = 7 Emeralds  |  Level 2 = 14 Emeralds  |  Level 3 = 21 Emeralds  |  Level 4 = 36 Emeralds  |  Level 5 = 48 Emeralds
-- Otherwise if it's one of the following special enchantments, that price is overwritten into the 'best enchantment' value.
+- If there's one of the following special enchantments, that price is overwritten into the 'best enchantment' value.
   <h5> frost_walker, fire_aspect, soul_speed, swift_sneak, wind_burst... = 24 EMERALDS </h5>
   <h5> flame, infinity, multishot... = 36 EMERALDS </h5>
   <h5> channeling, aqua_affinity, silk_touch... = 48 EMERALDS </h5>
   <h5> mending... = 52 EMERALDS </h5>
-- The '**number of enchantments**' works by counting all the vanilla enchantments present. That number is then multiplied by the best enchantment's price to get the final price. Sadly **custom enchantments** do not count. This is a limitation with the datapack.
+- 'number of enchantments' is then multiplied by the 'best enchantment' price to get the final price. Sadly **custom enchantments** do not count. This is a limitation with the datapack.
 - If it's above 64, then it gets divided by 9 rounded to the lowest denominator, and converted into Emerald Blocks. Discounts get removed.
 - If a price can't be placed the book is invalidated and classed as 'too complex'
 
 ## Treasure Enchantments & Sealed Books
 
-With customisable trades, enchantment individuality can become trivial when all you need to get more is to place the book down and trade for more with emeralds. The '**sealed**' books system was created to prevent others from duplicating duplicates of treasured enchantments like Wind Burst or Soul Speed. Their copies are labelled as 'Sealed' and can't be placed on lecterns, meaning that their exclusive purpose is to apply on gear. 
+With custom trades the uniqueness of enchantments could get lost because anybody could take a copy from their friend and produce as many more as they want. The '**sealed**' books system prevents this by nerfing duplicated books, making them unable to be placed on lecterns, so their exclusive purpose is to apply on gear. 
 
 **Sealed books** are designed to keep enchantments valuable throughout a server economy. If a master enchantment book produces sealed variants, it's up to the player how they want to distribute it.
 
