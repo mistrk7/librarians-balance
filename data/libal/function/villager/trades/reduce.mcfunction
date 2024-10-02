@@ -2,6 +2,8 @@
 #Filters and decreases the level trade for villagers
 #This checks and puts each Enchanted Book level back down to a level of 3.
 
+execute store result score booklvl libal.main run data get storage libal:books level
+
 #Slot 0
 data modify entity @s[tag=!trader] ArmorItems[1] set from entity @s Offers.Recipes[0].sell
 data modify storage libal:books slot set value 0
@@ -44,6 +46,7 @@ $execute if items entity @s armor.legs *[minecraft:stored_enchantments~[{levels:
 
 #Remove data
 scoreboard players reset @s libal.main
+scoreboard players reset booklvl libal.main
 item replace entity @s armor.legs with air
 #data remove storage libal:books slot 
 data remove storage libal:books bookEnch 
