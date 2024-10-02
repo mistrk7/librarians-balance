@@ -16,6 +16,9 @@ scoreboard players set cap_enchant_level libal.main 1
 ## Enable Sealed Books?
 scoreboard players set sealed_books libal.main 1
 
+## Minimum Enchantment Level
+data merge storage libal:books {level:3}
+
 ## Book Blacklist (Enchants exculded from the lectern)
 data merge storage libal:books {blacklist:{1:"minecraft:x",2:"minecraft:x",3:"minecraft:x",4:"minecraft:x"}}
 # Replace the "x" with your enchant name: ex. silk_touch. You cannot add more than four.
