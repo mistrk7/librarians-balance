@@ -1,5 +1,4 @@
 #I hate this less now
-execute if score booklvl libal.main matches 0 run return fail
 
 $execute if items entity @s armor.legs *[minecraft:stored_enchantments~[{enchantments:"minecraft:bane_of_arthropods"}]] run data modify entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels set value {"minecraft:bane_of_arthropods":$(level)}
 $execute if items entity @s armor.legs *[minecraft:stored_enchantments~[{enchantments:"minecraft:density"}]] run data modify entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels set value {"minecraft:density":$(level)}
