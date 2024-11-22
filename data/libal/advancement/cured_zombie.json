@@ -1,10 +1,16 @@
 {
   "criteria": {
-    "requirement": {
-      "trigger": "minecraft:cured_zombie_villager",
+    "example": {
+      "trigger": "minecraft:player_interacted_with_entity",
       "conditions": {
-        "zombie": {
-          "nbt": "{Offers:{Recipes:[{sell:{components:{\"minecraft:custom_data\":{traded: 1b}}}}]}}"
+        "item": {
+          "items": [
+            "minecraft:golden_apple",
+            "minecraft:enchanted_golden_apple"
+          ]
+        },
+        "entity": {
+          "type": "minecraft:zombie_villager"
         }
       }
     }
