@@ -23,7 +23,6 @@ Enchanted books are placeable on lecterns. Librarians adapt their enchanted book
   <h5> flame, infinity, multishot... = 36 EMERALDS </h5>
   <h5> channeling, aqua_affinity, silk_touch... = 48 EMERALDS </h5>
   <h5> mending... = 52 EMERALDS </h5>
-- 'number of enchantments' is then multiplied by the 'best enchantment' price to get the final price. Sadly **custom enchantments** do not count. This is a limitation with the datapack.
 - If it's above 64, then it gets divided by 9 rounded to the lowest denominator, and converted into Emerald Blocks. Discounts get removed.
 - If a price can't be placed the book is invalidated and classed as 'too complex'
 
