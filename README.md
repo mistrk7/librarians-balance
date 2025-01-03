@@ -16,7 +16,7 @@ It is based on two parameters; the **best enchantment** & the **number of enchan
 
 ### Price of enchantment = price(best enchantment) * number of enchantments </h3>
 
-- The '**number of enchantments**' is a count of vanilla enchantments on the book.
+- The '**number of enchantments**' is a count of all enchantments on the book.
 - The '**best enchantment**' is the price of the highest level enchantment on a book (below)
   ##### Level 1 = 7 Emeralds  |  Level 2 = 14 Emeralds  |  Level 3 = 21 Emeralds  |  Level 4 = 36 Emeralds  |  Level 5 = 48 Emeralds
 - If there's one of the following special enchantments, that price is overwritten into the 'best enchantment' value.
