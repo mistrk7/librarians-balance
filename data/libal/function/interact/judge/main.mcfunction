@@ -2,8 +2,8 @@ scoreboard players set book_level libal.main 1
 scoreboard players set book_illegal libal.main 0
 
 #Judge enchanted book (for info) as villager. This ultimately gets the cost_final that the book is valued in emeralds.
-$execute if score #tomereader libal.main matches 0 run data modify entity @e[limit=1,type=minecraft:villager,nbt={VillagerData:{profession:"minecraft:librarian"},Brain:{memories:{"minecraft:job_site":{value:{pos:$(cord)}}}}}] ArmorItems[1] set from entity @s SelectedItem
-$execute if score #tomereader libal.main matches 1 run data modify entity @e[limit=1,type=minecraft:villager,nbt={VillagerData:{profession:"minecraft:librarian"},Brain:{memories:{"minecraft:job_site":{value:{pos:$(cord)}}}}}] ArmorItems[1] set from block ~ ~ ~ Book
+$execute if score #tomereader libal.main matches 0 run data modify entity @e[limit=1,type=minecraft:villager,nbt={VillagerData:{profession:"minecraft:librarian"},Brain:{memories:{"minecraft:job_site":{value:{pos:$(cord)}}}}}] equipment.legs set from entity @s SelectedItem
+$execute if score #tomereader libal.main matches 1 run data modify entity @e[limit=1,type=minecraft:villager,nbt={VillagerData:{profession:"minecraft:librarian"},Brain:{memories:{"minecraft:job_site":{value:{pos:$(cord)}}}}}] equipment.legs set from block ~ ~ ~ Book
 $execute as @e[limit=1,type=minecraft:villager,nbt={VillagerData:{profession:"minecraft:librarian"},Brain:{memories:{"minecraft:job_site":{value:{pos:$(cord)}}}}}] run function libal:interact/judge/level_book 
 
 #Judge blacklist

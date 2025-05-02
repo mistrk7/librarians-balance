@@ -2,20 +2,20 @@
 tag @s add trader
 
 #Add 'button' item in Villager ArmorItem#0 to store the current Book data
-data modify entity @s ArmorItems[0] set value {id:"minecraft:stone_button",components:{"minecraft:custom_data":{Storage:[{},{ems:0,priceMultiplier:0}]}}}
+data modify entity @s equipment.feet set value {id:"minecraft:stone_button",components:{"minecraft:custom_data":{Storage:[{},{ems:0,priceMultiplier:0}]}}}
 
 
 ## SAVING THE OLD TRADE ##
 #Save Villager's book data in button item's 'Storage' tag
-$data modify entity @s ArmorItems[0].components."minecraft:custom_data".Storage[0] set from entity @s Offers.Recipes[$(slot)].sell.components
+$data modify entity @s equipment.feet.components."minecraft:custom_data".Storage[0] set from entity @s Offers.Recipes[$(slot)].sell.components
 #Save Villager's emerald data in button item's 'Storage' tag
-$data modify entity @s ArmorItems[0].components."minecraft:custom_data".Storage[1].ems set from entity @s Offers.Recipes[$(slot)].buy.count
+$data modify entity @s equipment.feet.components."minecraft:custom_data".Storage[1].ems set from entity @s Offers.Recipes[$(slot)].buy.count
 #Save Villager's price multiplier in button item's 'Storage' tag
-$data modify entity @s ArmorItems[0].components."minecraft:custom_data".Storage[1].priceMultiplier set from entity @s Offers.Recipes[$(slot)].priceMultiplier
+$data modify entity @s equipment.feet.components."minecraft:custom_data".Storage[1].priceMultiplier set from entity @s Offers.Recipes[$(slot)].priceMultiplier
 
 ## ADDING THE NEW TRADE ##
 #Store a success value when the Villager's book in memory (legs armour slot) merges into the Villager's Book trade
-$execute store success score same_book libal.main run execute if data entity @s Offers.Recipes[$(slot)].buyB.id run data modify entity @s Offers.Recipes[$(slot)].sell.components set from entity @s ArmorItems[1].components
+$execute store success score same_book libal.main run execute if data entity @s Offers.Recipes[$(slot)].buyB.id run data modify entity @s Offers.Recipes[$(slot)].sell.components set from entity @s equipment.legs.components
 $execute if data entity @s Offers.Recipes[$(slot)].buyB.id run data modify entity @s Offers.Recipes[$(slot)].sell.components merge value {"minecraft:custom_data":{traded:True}}
 
 #Set the trade to the books emerald value, unless the book already matches.
