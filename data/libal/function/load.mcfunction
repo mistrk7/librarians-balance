@@ -1,14 +1,11 @@
 #Scoreboard initial
 scoreboard objectives add libal.main dummy
 
-#update message on upgrade
-execute if score #m libal.main matches -1 unless score #v libal.main matches 35 run tellraw @a ["",{"text":"[Librarian's Balance]","color":"dark_green","clickEvent":{"action":"open_url","value":"https://modrinth.com/datapack/librarians-balance"},"hoverEvent":{"action":"show_text","contents":"Datapack / Mod"}},{"text":" In this version your settings have been reset. "},{"text":"Reconfigure","color":"aqua","clickEvent":{"action":"run_command","value":"/function libal:config"},"hoverEvent":{"action":"show_text","contents":"/function libal:config"}},{"text":" if you made important changes."}]
+#update logic (remove execute condition for debug)
+scoreboard players operation #oldv libal.main = #v libal.main
+scoreboard players set #v libal.main 37
 
-#load settings (remove execute condition for debug)
-execute unless score #v libal.main matches 35 run function libal:settings
-
-#set version
-scoreboard players set #v libal.main 35
+execute if score #oldv libal.main < #v libal.main run schedule function libal:update 1s
 
 #toggle multiplier
 scoreboard players set #m libal.main -1
