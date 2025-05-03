@@ -29,7 +29,7 @@ It is based on two parameters; the **best enchantment** & the **number of enchan
 
 ## Treasure Enchantments & Sealed Books
 
-'Treasure' enchantments are enchantments that are uniquely found in rare structures and can't be traded for in vanilla. They're usually kept exclusive to the players who use them.
+'Treasure' enchantments are enchantments that are uniquely found in rare structures and can't be traded for in vanilla. They're usually kept exclusive to the players who get them.
 
 In Librarian's Balance these books will produce a 'sealed' variant of the same book when bought through lectern trading. 'Sealed' books can't be traded further on lecterns and can only be used to apply on gear.
 
