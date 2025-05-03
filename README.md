@@ -29,11 +29,11 @@ It is based on two parameters; the **best enchantment** & the **number of enchan
 
 ## Treasure Enchantments & Sealed Books
 
-'Treasure' enchantments aren't obtained through an enchantment table or trade rerolling. They're uniquely found in rare structures, and are exclusive to the players who get them.
+'Treasure' enchantments are enchantments that are uniquely found in rare structures and can't be traded for in vanilla. They're usually kept exclusive to the players who use them.
 
-These books will produce a 'sealed' variant of the same book when bought. 'Sealed' books can't be cloned through lectern trading and can only be used to apply on gear.
+In Librarian's Balance these books will produce a 'sealed' variant of the same book when bought through lectern trading. 'Sealed' books can't be traded further on lecterns and can only be used to apply on gear.
 
-As a result, players who own legit 'treasure' enchantments control the distribution of copies that are purchased from them. Otherwise the speciality of enchantments like Wind Burst could get ruined as it could self-replicate into a commodity on a survival server!
+Librarians trading legit treasure enchantments control the distribution of copies that are purchased from them. Otherwise the commidification of enchantments like Wind Burst on a survival server could go against its intended design by Mojang!
 
 Books that become 'sealed' are copies of treasure enchantments such as:
 
