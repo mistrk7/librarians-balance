@@ -1,8 +1,8 @@
 
 #Filters and decreases the level trade for villagers
 #This checks and puts each Enchanted Book level back down to a level of 3.
-
 execute store result score booklvl libal.main run data get storage libal:books level
+data merge entity @s[tag=!trader] {equipment:{legs:{id:"minecraft:enchanted_book",count:1,components:{"minecraft:stored_enchantments":{"minecraft:efficiency":5}}}}}
 
 #Slot 0
 data modify entity @s[tag=!trader] equipment.legs set from entity @s Offers.Recipes[0].sell
