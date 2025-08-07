@@ -3,6 +3,7 @@ execute at @s anchored eyes run summon minecraft:item ^ ^ ^ {Tags:["libal_new"],
 execute as @e[type=item,tag=libal_new,limit=1] run function libal:interact/book/give_as_item
 
 #updating blockstate
+data remove block -9 56 16 Book
 execute if block ~ ~ ~ minecraft:lectern[facing=east] run setblock ~ ~ ~ minecraft:lectern[facing=east,has_book=false]
 execute if block ~ ~ ~ minecraft:lectern[facing=west] run setblock ~ ~ ~ minecraft:lectern[facing=west,has_book=false]
 execute if block ~ ~ ~ minecraft:lectern[facing=north] run setblock ~ ~ ~ minecraft:lectern[facing=north,has_book=false]
