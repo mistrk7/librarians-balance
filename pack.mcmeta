@@ -1,6 +1,9 @@
 {
 	"pack": {
-		"pack_format": 71,
+		"pack_format": 81,
+		"supported_formats": {
+			"max_inclusive": 81,
+			"min_inclusive": 71
 		"description": "by Misterk7_-"
 	}
 }
