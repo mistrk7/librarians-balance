@@ -10,6 +10,8 @@ scoreboard players set threshold libal.main 64
 scoreboard players set block libal.main 9
 #Say the cost isn't in blocks for now
 data merge storage libal:books {cost_blocks:False}
+#init values
+scoreboard players set price libal.main 0
 
 ## Calculate the price of the highest book
 execute if score book_level libal.main matches 1 run scoreboard players set price libal.main 7
@@ -38,6 +40,13 @@ execute if items entity @s armor.legs *[minecraft:stored_enchantments~[{enchantm
 
 # TIER 1 - 52 Emeralds (basically just mending)
 execute if items entity @s armor.legs *[minecraft:stored_enchantments~[{enchantments:"minecraft:mending"}]] run scoreboard players set price libal.main 52
+
+## Expanded Book Level Logic (lvl 5+) (unused sadly)
+execute if score book_level libal.main matches 6.. run scoreboard players operation price libal.main = book_level libal.main
+execute if score book_level libal.main matches 6.. run scoreboard players remove price libal.main 1
+execute if score book_level libal.main matches 6.. run scoreboard players set block libal.main 12
+execute if score book_level libal.main matches 6.. run scoreboard players operation price libal.main *= block libal.main
+execute if score book_level libal.main matches 6.. run scoreboard players set block libal.main 9
 
 ## Multiply price by the number of stacked enchantments on the book
 scoreboard players operation price libal.main *= enchantments libal.main
