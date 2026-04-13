@@ -8,6 +8,8 @@ tag @s remove trader_travel
 execute unless data entity @s Offers.Recipes[0].buyB{count:1} unless data entity @s Offers.Recipes[1].buyB{count:1} at @s run playsound block.chiseled_bookshelf.pickup block @a ~ ~ ~ 0.6
 execute unless data entity @s Offers.Recipes[0].buyB{count:1} unless data entity @s Offers.Recipes[1].buyB{count:1} at @s run playsound entity.villager.trade block @a ~ ~ ~ 0.7
 execute unless data entity @s Offers.Recipes[0].buyB{count:1} unless data entity @s Offers.Recipes[1].buyB{count:1} at @s run particle angry_villager ~ ~1.5 ~ 0 0 0 0 1
+# - verbose explanation
+execute unless data entity @s Offers.Recipes[0].buyB{count:1} unless data entity @s Offers.Recipes[1].buyB{count:1} at @s run title @p[sort=nearest, limit=1, distance=0..10] actionbar "Librarian has no initial book trade to replace."
 
 #success: a valid book is on the lectern
 execute if data entity @s Offers.Recipes[1].buyB{count:1} at @s run playsound entity.villager.work_librarian block @a 

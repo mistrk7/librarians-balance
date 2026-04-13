@@ -3,7 +3,7 @@ scoreboard objectives add libal.main dummy
 
 #update logic (remove execute condition for debug)
 scoreboard players operation #oldv libal.main = #v libal.main
-scoreboard players set #v libal.main 37
+scoreboard players set #v libal.main 39
 
 execute if score #oldv libal.main < #v libal.main run schedule function libal:update 1s
 

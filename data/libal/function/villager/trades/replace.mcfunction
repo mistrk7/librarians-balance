@@ -2,6 +2,10 @@
 #These are the trades that the villager will replace. It puts some books from storage (libal:books) in their place.
 #To add your own: For each slot, copy the command under itself and change the enchantment to what you want to filter.
 
+# Verbose: just for mending
+execute if score no_mending libal.main matches 1 if score verbose_mode libal.main matches 1 if data entity @s Offers.Recipes[0].sell.components."minecraft:stored_enchantments"{"minecraft:mending":1} unless data entity @s Offers.Recipes[0].sell.components."minecraft:custom_data"{traded:1b} run tellraw @p[sort=nearest, limit=1, distance=0..10] ["",{"text":"[Librarian's Balance]:","color":"dark_green","click_event":{"action":"open_url","url":"https://modrinth.com/datapack/librarians-balance"},"hover_event":{"action":"show_text","value":"Datapack / Mod"}},{"text":" Heads up! Mending can only be found in End or Ancient Cities. To get trades, place it on to the lectern."}]
+execute if score no_mending libal.main matches 1 if score verbose_mode libal.main matches 1 if data entity @s Offers.Recipes[1].sell.components."minecraft:stored_enchantments"{"minecraft:mending":1} unless data entity @s Offers.Recipes[1].sell.components."minecraft:custom_data"{traded:1b} run tellraw @p[sort=nearest, limit=1, distance=0..10] ["",{"text":"[Librarian's Balance]:","color":"dark_green","click_event":{"action":"open_url","url":"https://modrinth.com/datapack/librarians-balance"},"hover_event":{"action":"show_text","value":"Datapack / Mod"}},{"text":" Heads up! Mending can only be found in End or Ancient Cities. To get trades, place it on to the lectern."}]
+
 #Slot 0
 $execute if data entity @s[tag=!trader] Offers.Recipes[0].sell.components."minecraft:stored_enchantments".$(1) run data modify entity @s Offers.Recipes[0].sell.components."minecraft:stored_enchantments" set from storage libal:books replacements[0]
 $execute if data entity @s[tag=!trader] Offers.Recipes[0].sell.components."minecraft:stored_enchantments".$(2) run data modify entity @s Offers.Recipes[0].sell.components."minecraft:stored_enchantments" set from storage libal:books replacements[0]
