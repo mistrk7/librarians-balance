@@ -19,5 +19,5 @@ execute if score sealed_books libal.main matches 1 unless entity @s[nbt={Selecte
 execute if score sealed_books libal.main matches -1 if predicate libal:has_ench_book unless block ~ ~ ~ minecraft:lectern[has_book=true] run function libal:interact/judge/main with storage libal:jobs_find
 
 # Tell the user
-execute if score sealed_books libal.main matches 1 if entity @s[nbt={SelectedItem:{components:{"minecraft:custom_data":{sealed:1b}}}}] run title @p[sort=nearest, limit=1] actionbar "This book is sealed."
+execute if score sealed_books libal.main matches 1 if entity @s[nbt={SelectedItem:{components:{"minecraft:custom_data":{sealed:1b}}}}] run title @p[sort=nearest, limit=1, distance=0..10] actionbar "This book is sealed."
 execute if score sealed_books libal.main matches 1 if entity @s[nbt={SelectedItem:{components:{"minecraft:custom_data":{sealed:1b}}}}] positioned ~ ~ ~ run playsound block.chiseled_bookshelf.pickup.enchanted block @a

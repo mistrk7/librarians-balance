@@ -18,5 +18,5 @@ execute if score sealed_books libal.main matches -1 run function libal:interact/
 function libal:interact/tome_reader/get_checker
 
 # Tell the user
-execute if score sealed_books libal.main matches 1 if data block ~ ~ ~ Book{components:{"minecraft:custom_data":{sealed:1b}}} run title @p[sort=nearest, limit=1] actionbar "This book is sealed."
+execute if score sealed_books libal.main matches 1 if data block ~ ~ ~ Book{components:{"minecraft:custom_data":{sealed:1b}}} run title @p[sort=nearest, limit=1, distance=0..10] actionbar "This book is sealed."
 execute if score sealed_books libal.main matches 1 if data block ~ ~ ~ Book{components:{"minecraft:custom_data":{sealed:1b}}} positioned ~ ~ ~ run playsound block.chiseled_bookshelf.pickup.enchanted block @a

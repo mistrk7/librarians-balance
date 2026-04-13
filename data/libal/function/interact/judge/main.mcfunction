@@ -10,7 +10,7 @@ $execute as @e[limit=1,type=minecraft:villager,nbt={VillagerData:{profession:"mi
 $execute as @e[limit=1,type=minecraft:villager,nbt={VillagerData:{profession:"minecraft:librarian"},Brain:{memories:{"minecraft:job_site":{value:{pos:$(cord)}}}}}] run function libal:interact/judge/blacklist with storage libal:books blacklist
 
 #If book level isn't recognised, invalidate and tell the player
-execute if score book_level libal.main matches 0 run title @p[sort=nearest, limit=1] actionbar {"text":"This book is too complex.","color":"red"}
+execute if score book_level libal.main matches 0 run title @p[sort=nearest, limit=1, distance=0..10] actionbar {"text":"This book is too complex.","color":"red"}
 execute if score book_level libal.main matches 0 run execute positioned ~ ~ ~ run playsound block.chiseled_bookshelf.pickup.enchanted block @a ~ ~ ~ 0.5
 execute if score book_level libal.main matches 0 run execute positioned ~ ~ ~ run playsound entity.villager.work_cartographer block @a ~ ~ ~ 0.1
 
