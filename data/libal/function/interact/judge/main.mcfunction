@@ -1,3 +1,14 @@
+
+#Judge whether it's sealed or not (if so, return.)
+execute if score sealed_books libal.main matches 1 if entity @s[nbt={SelectedItem:{components:{"minecraft:stored_enchantments":{"libal:sealed":1}}}}] run scoreboard players set book_is_sealed libal.main 1
+execute if score sealed_books libal.main matches 1 if entity @s[nbt={SelectedItem:{components:{"minecraft:custom_data":{sealed:1b}}}}] run scoreboard players set book_is_sealed libal.main 1
+
+execute if score book_is_sealed libal.main matches 1 positioned ~ ~ ~ run playsound block.chiseled_bookshelf.pickup.enchanted block @a
+execute if score book_is_sealed libal.main matches 1 run title @p[sort=nearest, limit=1, distance=0..10] actionbar "This book is sealed."
+
+execute if score book_is_sealed libal.main matches 1 run return run scoreboard players reset book_is_sealed libal.main
+
+# Setup main.mcfunction
 scoreboard players set book_level libal.main 1
 scoreboard players set book_illegal libal.main 0
 
@@ -21,3 +32,4 @@ execute if score book_illegal libal.main matches 0 unless score book_level libal
 scoreboard players reset book_level libal.main
 scoreboard players reset book_illegal libal.main
 scoreboard players reset book_vanilla libal.main
+

@@ -1,0 +1,20 @@
+{
+  "anvil_cost": 1,
+  "description": {
+    "text": "Sealed",
+    "color": "blue",
+    "italic": true
+  },
+  "max_cost": {
+    "base": 0,
+    "per_level_above_first": 0
+  },
+  "max_level": 1,
+  "min_cost": {
+    "base": 0,
+    "per_level_above_first": 0
+  },
+  "slots": [],
+  "supported_items": [],
+  "weight": 1
+}
