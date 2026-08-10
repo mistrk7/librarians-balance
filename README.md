@@ -5,7 +5,7 @@ Librarian's Balance is a Minecraft datapack that integrates custom trading into 
 ## Visual overview of the core concept to balance Librarians
 
 <p align="center">
-    <img src="https://github.com/user-attachments/assets/65af2e7b-9860-45b1-858c-40bbbf6c2b34" alt="Trade cycle" width="500"/>
+    <img src="https://github.com/user-attachments/assets/5ce02123-3bd0-4f67-9745-25f1e56074c4" alt="Trade cycle" width="500"/>
 </p>
 
 ## Customisable Trades
