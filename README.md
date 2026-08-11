@@ -5,13 +5,19 @@ Librarian's Balance is a Minecraft datapack that integrates custom trading into 
 ## Visual overview of the core concept to balance Librarians
 
 <p align="center">
-    <img src="https://github.com/user-attachments/assets/65af2e7b-9860-45b1-858c-40bbbf6c2b34" alt="Trade cycle" width="500"/>
+    <img src="https://github.com/user-attachments/assets/5ce02123-3bd0-4f67-9745-25f1e56074c4" alt="Trade cycle" width="500"/>
 </p>
 
 ## Customisable Trades
 
-Enchanted books are placeable on lecterns. Librarians adapt their enchanted book trade to what's on their lectern. The **emerald** price gets updated to match the estimated value of that book.
-It is based on two parameters; the **best enchantment** & the **number of enchantments**. A simple breakdown of logic is below.  
+- Enchanted books are placeable on lecterns.
+- Librarians adapt their enchanted book trade to what's on their lectern.
+  
+The **emerald** price gets updated to match the estimated value of that book.
+  
+That price is based on two values; the **best enchantment** & the **number of enchantments**.  
+
+A simple breakdown of logic is below.  
 <h6>(spoilers, maybe??)</h6>
 
 ### Price of enchantment = price(best enchantment) * number of enchantments </h3>
