@@ -1,2 +1,105 @@
-tellraw @s ["",{"text":"--- "},{"text":"[Librarian's Balance]","color":"dark_green"},{"text":" --- "},{"text":"Show","color":"gold","click_event":{"action":"run_command","command":"/scoreboard objectives setdisplay sidebar libal.main"},"hover_event":{"action":"show_text","value":"Show sidebar"}},{"text":" / "},{"text":"Hide","color":"gold","click_event":{"action":"run_command","command":"/scoreboard objectives setdisplay sidebar"},"hover_event":{"action":"show_text","value":"Hide sidebar"}},{"text":"\n(1=yes/-1=no)\n- "},{"text":"No Mending","color":"aqua","click_event":{"action":"run_command","command":"/scoreboard players operation no_mending libal.main *= #m libal.main"},"hover_event":{"action":"show_text","value":"Do villagers trade mending"}},{"text":" -","click_event":{"action":"run_command","command":"/scoreboard players operation no_mending libal.main *= #m libal.main"},"hover_event":{"action":"show_text","value":"Do villagers trade mending"}},{"text":" [Toggle]","color":"gray","click_event":{"action":"run_command","command":"/scoreboard players operation no_mending libal.main *= #m libal.main"},"hover_event":{"action":"show_text","value":"Do villagers trade mending"}},{"text":"\n- "},{"text":"Sealed Books ","color":"aqua","click_event":{"action":"run_command","command":"/scoreboard players operation sealed_books libal.main *= #m libal.main"},"hover_event":{"action":"show_text","value":"Nerf 'treasure' books in trade"}},{"text":"- ","click_event":{"action":"run_command","command":"/scoreboard players operation sealed_books libal.main *= #m libal.main"},"hover_event":{"action":"show_text","value":"Nerf 'treasure' books in trade"}},{"text":"[Toggle]","color":"gray","click_event":{"action":"run_command","command":"/scoreboard players operation sealed_books libal.main *= #m libal.main"},"hover_event":{"action":"show_text","value":"Nerf 'treasure' books in trade"}},{"text":"\n- "},{"text":"Book Level Cap","color":"aqua","click_event":{"action":"run_command","command":"/scoreboard players operation cap_enchant_level libal.main *= #m libal.main"},"hover_event":{"action":"show_text","value":"Villagers cap book trades to 3"}},{"text":" -","click_event":{"action":"run_command","command":"/scoreboard players operation cap_enchant_level libal.main *= #m libal.main"},"hover_event":{"action":"show_text","value":"Villagers cap book trades to 3"}},{"text":" [Toggle]","color":"gray","click_event":{"action":"run_command","command":"/scoreboard players operation cap_enchant_level libal.main *= #m libal.main"},"hover_event":{"action":"show_text","value":"Villagers cap book trades to 3"}},{"text":" - "},{"text":"[edit]","color":"gold","click_event":{"action":"suggest_command","command":"/data modify storage libal:books level set value 3"},"hover_event":{"action":"show_text","value":"Edit book level cap to a specific value (PERMANENT!)"}},{"text":"\n- "},{"text":"Book Blacklist  ","color":"dark_aqua","hover_event":{"action":"show_text","value":"Books you don't want on lectern"}},{"text":"-","hover_event":{"action":"show_text","value":"Books you don't want on lectern"}},{"text":"  "},{"text":"[1] ","color":"gray","click_event":{"action":"suggest_command","command":"/data modify storage libal:books blacklist.1 set value \"minecraft:enchant_one\""},"hover_event":{"action":"show_text","value":"Book 1"}},{"text":"[2] ","color":"gray","click_event":{"action":"suggest_command","command":"/data modify storage libal:books blacklist.2 set value \"minecraft:enchant_two\""},"hover_event":{"action":"show_text","value":"Book 2"}},{"text":"[3] ","color":"gray","click_event":{"action":"suggest_command","command":"/data modify storage libal:books blacklist.3 set value \"minecraft:enchant_three\""},"hover_event":{"action":"show_text","value":"Book 3"}},{"text":"[4]","color":"gray","click_event":{"action":"suggest_command","command":"/data modify storage libal:books blacklist.4 set value \"minecraft:enchant_four\""},"hover_event":{"action":"show_text","value":"Book 4"}},{"text":"\n- "},{"text":"Delisted Books  ","color":"dark_aqua","hover_event":{"action":"show_text","value":"Books that don't appear in villager trades (mending)"}},{"text":"-","hover_event":{"action":"show_text","value":"Books that don't appear in villager trades (mending)"}},{"text":"  "},{"text":"[1] ","color":"gray","click_event":{"action":"suggest_command","command":"/data modify storage libal:books delisted.1 set value \"minecraft:mending\""},"hover_event":{"action":"show_text","value":"Book 1"}},{"text":"[2] ","color":"gray","click_event":{"action":"suggest_command","command":"/data modify storage libal:books delisted.2 set value \"minecraft:enchant_two\""},"hover_event":{"action":"show_text","value":"Book 2"}},{"text":"[3] ","color":"gray","click_event":{"action":"suggest_command","command":"/data modify storage libal:books delisted.3 set value \"minecraft:enchant_three\""},"hover_event":{"action":"show_text","value":"Book 3"}},{"text":"[4]","color":"gray","click_event":{"action":"suggest_command","command":"/data modify storage libal:books delisted.4 set value \"minecraft:enchant_four\""},"hover_event":{"action":"show_text","value":"Book 4"}},{"text":"\n- "},{"text":"Verbose Mode","color":"light_purple","click_event":{"action":"run_command","command":"/scoreboard players operation verbose_mode libal.main *= #m libal.main"},"hover_event":{"action":"show_text","value":"Prime tips to explain mechanics "}},{"text":" -","click_event":{"action":"run_command","command":"/scoreboard players operation verbose_mode libal.main *= #m libal.main"},"hover_event":{"action":"show_text","value":"Prime tips to explain mechanics "}},{"text":" [Toggle]","color":"gray","click_event":{"action":"run_command","command":"/scoreboard players operation verbose_mode libal.main *= #m libal.main"},"hover_event":{"action":"show_text","value":"Prime tips to explain mechanics "}},{"text":"\n--- "},{"text":"[reset] ","click_event":{"action":"run_command","command":"/function libal:settings"},"hover_event":{"action":"show_text","value":"Set settings to default"}},{"text":"---"}]
-# Navigable in-game options. Settings override them when /reload is done.
+#template
+data modify storage libal:macro dialog set value \
+{\
+  "type": "minecraft:multi_action",\
+  "title": "Librarian's Balance (Config)",\
+  "inputs": [\
+    {\
+      "type": "minecraft:boolean",\
+      "key": "no_mending",\
+      "label": {\
+        "text": "No Mending"\
+      },\
+      "initial": false,\
+      "on_true": "1",\
+      "on_false": "-1"\
+    },\
+    {\
+      "type": "minecraft:boolean",\
+      "key": "sealed_books",\
+      "label": {\
+        "text": "Sealed Book"\
+      },\
+      "initial": false,\
+      "on_true": "1",\
+      "on_false": "-1"\
+    },\
+    {\
+      "type": "minecraft:number_range",\
+      "key": "book_level_cap",\
+      "label": {\
+        "text": "Book Level Cap"\
+      },\
+      "start": 1,\
+      "end": 5,\
+      "step": 1,\
+      "initial": 3\
+    },\
+    {\
+      "type": "minecraft:text",\
+      "key": "book_blacklist",\
+      "label": {\
+        "text": "Blacklisted Enchants id"\
+      },\
+      "max_length": 2048,\
+      "initial": "minecraft:x",\
+      "multiline": {\
+        "max_lines": 4\
+      }\
+    },\
+    {\
+      "type": "minecraft:text",\
+      "key": "delisted_books",\
+      "label": {\
+        "text": "Delisted Enchants id"\
+      },\
+      "max_length": 2048,\
+      "initial": "minecraft:x",\
+      "multiline": {\
+        "max_lines": 4\
+      }\
+    },\
+    {\
+      "type": "minecraft:boolean",\
+      "key": "verbose_mode",\
+      "label": {\
+        "text": "Verbose Mode"\
+      },\
+      "initial": false,\
+      "on_true": "1",\
+      "on_false": "-1"\
+    }\
+  ],\
+  "columns": 2,\
+  "actions": [\
+    {\
+      "label": "Save",\
+      "action": {\
+        "type": "minecraft:dynamic/run_command",\
+        "template": 'function libal:config/save {no_mending:$(no_mending),sealed_books:$(sealed_books),book_level_cap:$(book_level_cap),verbose_mode:$(verbose_mode),delisted_books:"$(delisted_books)",book_blacklist:"$(book_blacklist)"}'\
+      }\
+    }\
+  ]\
+}
+
+#change init to current values
+
+execute if score no_mending libal.main matches 1 run data modify storage libal:macro dialog.inputs[{key:"no_mending"}].initial set value true
+execute if score no_mending libal.main matches -1 run data modify storage libal:macro dialog.inputs[{key:"no_mending"}].initial set value false
+
+execute if score sealed_books libal.main matches 1 run data modify storage libal:macro dialog.inputs[{key:"sealed_books"}].initial set value true
+execute if score sealed_books libal.main matches -1 run data modify storage libal:macro dialog.inputs[{key:"sealed_books"}].initial set value false
+
+data modify storage libal:macro dialog.inputs[{key:"book_level_cap"}].initial set from storage libal:books level
+
+execute if score verbose_mode libal.main matches 1 run data modify storage libal:macro dialog.inputs[{key:"verbose_mode"}].initial set value true
+execute if score verbose_mode libal.main matches -1 run data modify storage libal:macro dialog.inputs[{key:"verbose_mode"}].initial set value false
+
+#concat blacklist and delisted in a multiline str
+function libal:config/concat_blacklist with storage libal:books blacklist
+function libal:config/concat_delisted with storage libal:books delisted
+
+#show dialog
+function libal:config/show_dialog with storage libal:macro
+
+
