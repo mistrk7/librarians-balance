@@ -19,13 +19,13 @@ $data merge storage libal:macro {blacklist:"$(book_blacklist)",delisted:"$(delis
 
 #blacklist
 data modify storage libal:macro str set from storage libal:macro blacklist
-data modify storage libal:macro ench_count set value 4
+data modify storage libal:macro ench_count set value 6
 function libal:config/parse/main
 data modify storage libal:books blacklist set from storage libal:macro map
 
 #delisted
 data modify storage libal:macro str set from storage libal:macro delisted
-data modify storage libal:macro ench_count set value 4
+data modify storage libal:macro ench_count set value 6
 function libal:config/parse/main
 data modify storage libal:books delisted set from storage libal:macro map
 

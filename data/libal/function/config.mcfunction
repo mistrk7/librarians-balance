@@ -44,7 +44,7 @@ data modify storage libal:macro dialog set value  \
       "max_length": 2048,\
       "initial": "minecraft:x",\
       "multiline": {\
-        "max_lines": 4\
+        "max_lines": 6\
       }\
     },\
     {\
@@ -56,7 +56,7 @@ data modify storage libal:macro dialog set value  \
       "max_length": 2048,\
       "initial": "minecraft:x",\
       "multiline": {\
-        "max_lines": 4\
+        "max_lines": 6\
       }\
     },\
     {\
