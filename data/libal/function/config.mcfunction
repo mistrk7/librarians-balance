@@ -1,5 +1,5 @@
 #template
-data modify storage libal:macro dialog set value \
+data modify storage libal:macro dialog set value  \
 {\
   "type": "minecraft:multi_action",\
   "title": "Librarian's Balance (Config)",\
@@ -60,6 +60,18 @@ data modify storage libal:macro dialog set value \
       }\
     },\
     {\
+      "type": "minecraft:text",\
+      "key": "sealed_list",\
+      "label": {\
+        "text": "Sealed Books id"\
+      },\
+      "max_length": 2048,\
+      "initial": "minecraft:x",\
+      "multiline": {\
+        "max_lines": 12\
+      }\
+    },\
+    {\
       "type": "minecraft:boolean",\
       "key": "verbose_mode",\
       "label": {\
@@ -76,7 +88,7 @@ data modify storage libal:macro dialog set value \
       "label": "Save",\
       "action": {\
         "type": "minecraft:dynamic/run_command",\
-        "template": 'function libal:config/save {no_mending:$(no_mending),sealed_books:$(sealed_books),book_level_cap:$(book_level_cap),verbose_mode:$(verbose_mode),delisted_books:"$(delisted_books)",book_blacklist:"$(book_blacklist)"}'\
+        "template": 'function libal:config/save {no_mending:$(no_mending),sealed_books:$(sealed_books),book_level_cap:$(book_level_cap),verbose_mode:$(verbose_mode),delisted_books:"$(delisted_books)",book_blacklist:"$(book_blacklist)",sealed_list:"$(sealed_list)"}'\
       }\
     }\
   ]\
@@ -95,9 +107,10 @@ data modify storage libal:macro dialog.inputs[{key:"book_level_cap"}].initial se
 execute if score verbose_mode libal.main matches 1 run data modify storage libal:macro dialog.inputs[{key:"verbose_mode"}].initial set value true
 execute if score verbose_mode libal.main matches -1 run data modify storage libal:macro dialog.inputs[{key:"verbose_mode"}].initial set value false
 
-#concat blacklist and delisted in a multiline str
+#concat blacklist and delisted and sealed list in a multiline str
 function libal:config/concat_blacklist with storage libal:books blacklist
 function libal:config/concat_delisted with storage libal:books delisted
+function libal:config/concat_sealed with storage libal:books sealed
 
 #show dialog
 function libal:config/show_dialog with storage libal:macro

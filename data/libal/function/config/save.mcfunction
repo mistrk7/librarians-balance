@@ -14,14 +14,23 @@ $data merge storage libal:books {level:$(book_level_cap)}
 $scoreboard players set verbose_mode libal.main $(verbose_mode)
 
 
-#parse blacklist and delisted
-$data merge storage libal:macro {blacklist:"$(book_blacklist)",delisted:"$(delisted_books)"}
+#parse blacklist and delisted and sealed list
+$data merge storage libal:macro {blacklist:"$(book_blacklist)",delisted:"$(delisted_books)",sealed:"$(sealed_list)"}
 
+#blacklist
 data modify storage libal:macro str set from storage libal:macro blacklist
+data modify storage libal:macro ench_count set value 4
 function libal:config/parse/main
 data modify storage libal:books blacklist set from storage libal:macro map
 
+#delisted
 data modify storage libal:macro str set from storage libal:macro delisted
+data modify storage libal:macro ench_count set value 4
 function libal:config/parse/main
 data modify storage libal:books delisted set from storage libal:macro map
 
+#sealed
+data modify storage libal:macro str set from storage libal:macro sealed
+data modify storage libal:macro ench_count set value 12
+function libal:config/parse/main
+data modify storage libal:books sealed set from storage libal:macro map

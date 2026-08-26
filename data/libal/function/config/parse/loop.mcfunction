@@ -17,4 +17,4 @@ data modify storage libal:macro temp set string storage libal:macro temp 1
 execute if score #l.str libal.main < #m.str libal.main run return run function libal:config/parse/loop
 
 #if we have done all char, done
-data modify storage libal:macro map.4 set from storage libal:macro temp2
+function libal:config/parse/loop_done with storage libal:macro 
