@@ -41,6 +41,7 @@ In Librarian's Balance these books will produce a 'sealed' variant of the same b
 
 Books that become 'sealed' are copies of treasure enchantments such as:
 
+- Mending - Unique to End & Ancient Cities
 - Soul Speed  -  Unique to Piglin Bartering.
 - Swift Sneak  -  Unique to Ancient Cities.
 - Wind Burst  -  Unique to Trial Chambers.
@@ -48,8 +49,6 @@ Books that become 'sealed' are copies of treasure enchantments such as:
 - Frost Walker  -  Unique to having a special effect on water.
 
 This is how treasure enchantments remain valuable in a server economy. 
-
-One notable exception is Mending. We had Mending at one point, but because of how core it is to game and how difficult the datapack makes obtaining it, it was decided against. 
 
 ## Tweaks to Villager Trades
 Librarian's Balance makes tweaks to basic trading rules, helping to support the custom trade system.
