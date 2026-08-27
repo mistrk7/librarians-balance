@@ -2,33 +2,55 @@
 data modify storage libal:macro dialog set value  \
 {\
   "type": "minecraft:multi_action",\
-  "title": "Librarian's Balance (Config)",\
+  "title": {\
+    "text": "[ Librarian's Balance ]",\
+    "color": "green"\
+  },\
+  "body": [\
+    {\
+      "type": "minecraft:item",\
+      "item": {\
+        "id": "minecraft:enchanted_book",\
+        "components": {\
+          "minecraft:custom_name": "minecraft:mending"\
+        }\
+      },\
+      "show_tooltip": 1,\
+      "width": 16,\
+      "height": 16\
+    },\
+    {\
+      "type": "minecraft:plain_message",\
+      "contents": {\
+        "text": "IDs start with their namespace followed by the enchantment name. Vanilla starts with minecraft: , but a modpack may start with something else (ex. veinminer-enchantment:veinminer)",\
+        "extra": [\
+          {\
+            "text": "\nLink to Minecraft's List of Enchantments",\
+            "color": "#00ffff",\
+            "underlined": 0,\
+            "click_event": {\
+              "action": "open_url",\
+              "url": "https://minecraft.wiki/w/Enchantment#List_of_enchantments"\
+            },\
+            "hover_event": {\
+              "action": "show_text",\
+              "value": "link"\
+            }\
+          }\
+        ]\
+      }\
+    }\
+  ],\
   "inputs": [\
-    {\
-      "type": "minecraft:boolean",\
-      "key": "no_mending",\
-      "label": {\
-        "text": "No Mending"\
-      },\
-      "initial": false,\
-      "on_true": "1",\
-      "on_false": "-1"\
-    },\
-    {\
-      "type": "minecraft:boolean",\
-      "key": "sealed_books",\
-      "label": {\
-        "text": "Sealed Book"\
-      },\
-      "initial": false,\
-      "on_true": "1",\
-      "on_false": "-1"\
-    },\
     {\
       "type": "minecraft:number_range",\
       "key": "book_level_cap",\
       "label": {\
-        "text": "Book Level Cap"\
+        "text": "Random Book Level Cap",\
+        "hover_event": {\
+          "action": "show_text",\
+          "value": "The level limit for random book trades. By design, the lectern bypasses this."\
+        }\
       },\
       "start": 1,\
       "end": 5,\
@@ -36,22 +58,37 @@ data modify storage libal:macro dialog set value  \
       "initial": 3\
     },\
     {\
-      "type": "minecraft:text",\
-      "key": "book_blacklist",\
+      "type": "minecraft:boolean",\
+      "key": "no_mending",\
       "label": {\
-        "text": "Blacklisted Enchants id"\
+        "text": "No Mending",\
+        "hover_event": {\
+          "action": "show_text",\
+          "value": "Removes Mending (delisted enchantments) from appearing in trades."\
+        }\
       },\
-      "max_length": 2048,\
-      "initial": "minecraft:x",\
-      "multiline": {\
-        "max_lines": 6\
-      }\
+      "on_true": "1",\
+      "on_false": "-1"\
+    },\
+    {\
+      "type": "minecraft:boolean",\
+      "key": "sealed_books",\
+      "label": {\
+        "text": "Sealed Books",\
+        "color": "aqua",\
+        "hover_event": {\
+          "action": "show_text",\
+          "value": "Locks the copies of books that are uniquely obtained (ex. soul speed) from being traded further by using the 'sealed' tag."\
+        }\
+      },\
+      "on_true": "1",\
+      "on_false": "-1"\
     },\
     {\
       "type": "minecraft:text",\
       "key": "delisted_books",\
       "label": {\
-        "text": "Delisted Enchants id"\
+        "text": "Delisted Enchants (like mending)"\
       },\
       "max_length": 2048,\
       "initial": "minecraft:x",\
@@ -63,7 +100,11 @@ data modify storage libal:macro dialog set value  \
       "type": "minecraft:text",\
       "key": "sealed_list",\
       "label": {\
-        "text": "Sealed Books id"\
+        "text": "Sealed Books (like treasure enchants)",\
+        "click_event": {\
+          "action": "open_url",\
+          "url": "https://minecraft.wiki/w/Enchantment#Treasure"\
+        }\
       },\
       "max_length": 2048,\
       "initial": "minecraft:x",\
@@ -72,18 +113,40 @@ data modify storage libal:macro dialog set value  \
       }\
     },\
     {\
+      "type": "minecraft:text",\
+      "key": "book_blacklist",\
+      "label": {\
+        "text": "Blacklisted Enchants (villagers refuse)"\
+      },\
+      "max_length": 2048,\
+      "initial": "minecraft:x",\
+      "multiline": {\
+        "max_lines": 6\
+      }\
+    },\
+    {\
       "type": "minecraft:boolean",\
       "key": "verbose_mode",\
       "label": {\
-        "text": "Verbose Mode"\
+        "text": "Verbose Mode",\
+        "hover_event": {\
+          "action": "show_text",\
+          "value": "Gives a tip in chat to direct players who try to RNG a Mending book (if no mending is enabled they're just wasting time)"\
+        }\
       },\
-      "initial": false,\
       "on_true": "1",\
       "on_false": "-1"\
     }\
   ],\
   "columns": 2,\
   "actions": [\
+    {\
+      "label": "Reset",\
+      "action": {\
+        "type": "minecraft:run_command",\
+        "command": "function libal:settings"\
+      }\
+    },\
     {\
       "label": "Save",\
       "action": {\

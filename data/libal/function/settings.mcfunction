@@ -27,7 +27,7 @@ data merge storage libal:books {blacklist:{1:"minecraft:x",2:"minecraft:x",3:"mi
 # Replace the "x" with your enchant name: ex. silk_touch. You cannot add more than six.
 
 ## Sealed Books (List of books that cannot have their copies replicated further)
-data merge storage libal:books {sealed:{1:"minecraft:wind_burst",2:"minecraft:soul_speed",3:"minecraft:swift_sneak",4:"minecraft:frost_walker",5:"minecraft:binding_curse",6:"minecraft:vanishing_curse",7:"minecraft:x",8:"minecraft:x",9:"minecraft:x",10:"minecraft:x",11:"minecraft:x",12:"minecraft:x"}}
+data merge storage libal:books {sealed:{1:"minecraft:mending",2:"minecraft:wind_burst",3:"minecraft:soul_speed",4:"minecraft:swift_sneak",5:"minecraft:frost_walker",6:"minecraft:vanishing_curse",7:"minecraft:binding_curse",8:"minecraft:x",9:"minecraft:x",10:"minecraft:x",11:"minecraft:x",12:"minecraft:x"}}
 # To remove one, rename it to a non-book. You cannot add more than 12.
 
 ## Delisted Books (Books that won't appear in villager trades, like mending)
