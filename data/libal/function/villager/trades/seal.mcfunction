@@ -9,6 +9,11 @@ $execute if score isSeal libal.main matches 0 run execute store success score is
 $execute if score isSeal libal.main matches 0 run execute store success score isSeal libal.main run data get block ~ ~ ~ Book.components."minecraft:stored_enchantments".$(5)
 $execute if score isSeal libal.main matches 0 run execute store success score isSeal libal.main run data get block ~ ~ ~ Book.components."minecraft:stored_enchantments".$(6)
 $execute if score isSeal libal.main matches 0 run execute store success score isSeal libal.main run data get block ~ ~ ~ Book.components."minecraft:stored_enchantments".$(7)
+$execute if score isSeal libal.main matches 0 run execute store success score isSeal libal.main run data get block ~ ~ ~ Book.components."minecraft:stored_enchantments".$(8)
+$execute if score isSeal libal.main matches 0 run execute store success score isSeal libal.main run data get block ~ ~ ~ Book.components."minecraft:stored_enchantments".$(9)
+$execute if score isSeal libal.main matches 0 run execute store success score isSeal libal.main run data get block ~ ~ ~ Book.components."minecraft:stored_enchantments".$(10)
+$execute if score isSeal libal.main matches 0 run execute store success score isSeal libal.main run data get block ~ ~ ~ Book.components."minecraft:stored_enchantments".$(11)
+$execute if score isSeal libal.main matches 0 run execute store success score isSeal libal.main run data get block ~ ~ ~ Book.components."minecraft:stored_enchantments".$(12)
 
 # If the book is sealed,
 execute if score isSeal libal.main matches 1 run execute if data entity @s Offers.Recipes[0].buyB{id:"minecraft:book"} run data modify entity @s Offers.Recipes[0].sell.components merge value {"minecraft:stored_enchantments":{"libal:sealed":1}}
