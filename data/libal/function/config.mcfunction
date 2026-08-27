@@ -131,7 +131,7 @@ data modify storage libal:macro dialog set value  \
         "text": "Verbose Mode",\
         "hover_event": {\
           "action": "show_text",\
-          "value": "Gives a tip in chat to direct players who try to RNG a Mending book (if no mending is enabled they're just wasting time)"\
+          "value": "Gives a tip in chat to players who try to RNG a Mending book (if no mending is enabled they're just wasting time)"\
         }\
       },\
       "on_true": "1",\
