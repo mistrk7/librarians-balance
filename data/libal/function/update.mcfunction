@@ -6,4 +6,4 @@ function libal:settings
 # upgrade path
 execute as @e[type=villager,tag=trader] run function libal:update/nolevel_stored_enchantments
 
-tellraw @a ["",{"text":"[Librarian's Balance]","color":"dark_green","click_event":{"action":"open_url","url":"https://modrinth.com/datapack/librarians-balance"},"hover_event":{"action":"show_text","value":"Datapack / Mod"}},{"text":" updated. "},{"text":"[ /function libal:config ] reset! "}]
+tellraw @a ["",{"text":"[Librarian's Balance]","color":"dark_green","click_event":{"action":"open_url","url":"https://modrinth.com/datapack/librarians-balance"},"hover_event":{"action":"show_text","value":"Datapack / Mod"}},{"text":" updated. "},{"text":"config reset! "}]
