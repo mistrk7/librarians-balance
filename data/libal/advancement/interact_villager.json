@@ -4,8 +4,11 @@
       "trigger": "minecraft:player_interacted_with_entity",
       "conditions": {
         "entity": {
-          "entity_type": "minecraft:villager",
-          "nbt": "{VillagerData:{profession:\"minecraft:librarian\"}}"
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:nbt": "{VillagerData:{profession:\"minecraft:librarian\"}}"
+          }
         }
       }
     }

@@ -1,9 +1,9 @@
 {
-  "function": "minecraft:set_name",
   "entity": "this",
   "name": {
     "entity": "@s",
     "nbt": "Offers.Recipes[3].sell.components.\"minecraft:stored_enchantments\"",
     "interpret": false
-  }
+  },
+  "type": "minecraft:set_name"
 }
