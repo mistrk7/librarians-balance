@@ -301,11 +301,12 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:enchanted_book",
           "modifier": {
             "type": "minecraft:enchant_randomly",
             "options": "minecraft:mending"
-          }
+          },
+          "name": "minecraft:book",
+          "weight": 2
         }
       ],
       "rolls": {
