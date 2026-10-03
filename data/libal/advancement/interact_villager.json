@@ -4,7 +4,7 @@
       "trigger": "minecraft:player_interacted_with_entity",
       "conditions": {
         "entity": {
-          "entity_type": "minecraft:villager",
+          "type": "minecraft:villager",
           "nbt": "{VillagerData:{profession:\"minecraft:librarian\"}}"
         }
       }
