@@ -6,17 +6,6 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:book",
-          "weight": 2,
-          "functions": [
-            {
-              "function": "minecraft:enchant_randomly",
-              "options": "minecraft:mending"
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
           "functions": [
             {
               "add": false,
@@ -99,10 +88,6 @@
           "type": "minecraft:item",
           "name": "minecraft:saddle",
           "weight": 3
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:copper_horse_armor"
         },
         {
           "type": "minecraft:item",
@@ -339,6 +324,17 @@
           ],
           "name": "minecraft:iron_shovel",
           "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:book",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:enchant_randomly",
+              "options": "minecraft:mending"
+            }
+          ]
         }
       ],
       "rolls": {
