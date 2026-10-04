@@ -2,24 +2,11 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:book",
-          "weight": 2,
           "functions": [
             {
-              "function": "minecraft:enchant_randomly",
-              "options": "minecraft:mending"
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
               "count": {
                 "type": "minecraft:uniform",
                 "max": 7,
@@ -35,7 +22,6 @@
           "type": "minecraft:item",
           "functions": [
             {
-              "add": false,
               "count": {
                 "type": "minecraft:uniform",
                 "max": 8,
@@ -51,7 +37,6 @@
           "type": "minecraft:item",
           "functions": [
             {
-              "add": false,
               "count": {
                 "type": "minecraft:uniform",
                 "max": 7,
@@ -67,7 +52,6 @@
           "type": "minecraft:item",
           "functions": [
             {
-              "add": false,
               "count": {
                 "type": "minecraft:uniform",
                 "max": 6,
@@ -83,7 +67,6 @@
           "type": "minecraft:item",
           "functions": [
             {
-              "add": false,
               "count": {
                 "type": "minecraft:uniform",
                 "max": 10,
@@ -130,6 +113,22 @@
             }
           ],
           "name": "minecraft:diamond_sword",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "max": 39,
+                "min": 20
+              },
+              "options": "#minecraft:on_random_loot"
+            }
+          ],
+          "name": "minecraft:diamond_spear",
           "weight": 3
         },
         {
@@ -339,6 +338,17 @@
           ],
           "name": "minecraft:iron_shovel",
           "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:book",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:enchant_randomly",
+              "options": "minecraft:mending"
+            }
+          ]
         }
       ],
       "rolls": {
@@ -348,7 +358,6 @@
       }
     },
     {
-      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:empty",
