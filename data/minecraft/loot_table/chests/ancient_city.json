@@ -2,25 +2,11 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:book",
-          "weight": 2,
           "functions": [
             {
-              "function": "minecraft:enchant_randomly",
-              "options": "minecraft:mending"
-            }
-          ],
-          "conditions": []
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
               "count": {
                 "type": "minecraft:uniform",
                 "max": 2,
@@ -39,7 +25,6 @@
           "type": "minecraft:item",
           "functions": [
             {
-              "add": false,
               "count": 1,
               "function": "minecraft:set_count"
             }
@@ -51,7 +36,6 @@
           "type": "minecraft:item",
           "functions": [
             {
-              "add": false,
               "count": {
                 "type": "minecraft:uniform",
                 "max": 2,
@@ -65,19 +49,12 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:name_tag",
-          "weight": 2
-        },
-        {
-          "type": "minecraft:item",
           "functions": [
             {
-              "add": false,
               "count": 1,
               "function": "minecraft:set_count"
             },
             {
-              "add": false,
               "damage": {
                 "type": "minecraft:uniform",
                 "max": 1,
@@ -102,7 +79,6 @@
           "type": "minecraft:item",
           "functions": [
             {
-              "add": false,
               "count": 1,
               "function": "minecraft:set_count"
             }
@@ -114,7 +90,6 @@
           "type": "minecraft:item",
           "functions": [
             {
-              "add": false,
               "count": 1,
               "function": "minecraft:set_count"
             }
@@ -126,7 +101,6 @@
           "type": "minecraft:item",
           "functions": [
             {
-              "add": false,
               "count": {
                 "type": "minecraft:uniform",
                 "max": 5,
@@ -179,7 +153,6 @@
           "type": "minecraft:item",
           "functions": [
             {
-              "add": false,
               "count": {
                 "type": "minecraft:uniform",
                 "max": 10,
@@ -195,7 +168,6 @@
           "type": "minecraft:item",
           "functions": [
             {
-              "add": false,
               "count": {
                 "type": "minecraft:uniform",
                 "max": 3,
@@ -211,7 +183,6 @@
           "type": "minecraft:item",
           "functions": [
             {
-              "add": false,
               "count": {
                 "type": "minecraft:uniform",
                 "max": 4,
@@ -227,7 +198,6 @@
           "type": "minecraft:item",
           "functions": [
             {
-              "add": false,
               "count": {
                 "type": "minecraft:uniform",
                 "max": 15,
@@ -243,7 +213,6 @@
           "type": "minecraft:item",
           "functions": [
             {
-              "add": false,
               "count": {
                 "type": "minecraft:uniform",
                 "max": 3,
@@ -259,7 +228,6 @@
           "type": "minecraft:item",
           "functions": [
             {
-              "add": false,
               "count": {
                 "type": "minecraft:uniform",
                 "max": 15,
@@ -291,7 +259,6 @@
           "type": "minecraft:item",
           "functions": [
             {
-              "add": false,
               "count": {
                 "type": "minecraft:uniform",
                 "max": 3,
@@ -307,7 +274,6 @@
           "type": "minecraft:item",
           "functions": [
             {
-              "add": false,
               "count": {
                 "type": "minecraft:uniform",
                 "max": 3,
@@ -323,7 +289,6 @@
           "type": "minecraft:item",
           "functions": [
             {
-              "add": false,
               "count": {
                 "type": "minecraft:uniform",
                 "max": 3,
@@ -354,7 +319,6 @@
           "type": "minecraft:item",
           "functions": [
             {
-              "add": false,
               "count": {
                 "type": "minecraft:uniform",
                 "max": 10,
@@ -370,7 +334,6 @@
           "type": "minecraft:item",
           "functions": [
             {
-              "add": false,
               "count": {
                 "type": "minecraft:uniform",
                 "max": 15,
@@ -386,7 +349,6 @@
           "type": "minecraft:item",
           "functions": [
             {
-              "add": false,
               "count": {
                 "type": "minecraft:uniform",
                 "max": 15,
@@ -402,7 +364,6 @@
           "type": "minecraft:item",
           "functions": [
             {
-              "add": false,
               "count": {
                 "type": "minecraft:uniform",
                 "max": 15,
@@ -413,6 +374,15 @@
           ],
           "name": "minecraft:coal",
           "weight": 7
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:enchant_randomly",
+            "options": "minecraft:mending"
+          },
+          "name": "minecraft:book",
+          "weight": 2
         }
       ],
       "rolls": {
@@ -422,7 +392,6 @@
       }
     },
     {
-      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:empty",
