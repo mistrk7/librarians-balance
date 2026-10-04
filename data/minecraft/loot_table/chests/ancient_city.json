@@ -6,18 +6,6 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:book",
-          "weight": 2,
-          "functions": [
-            {
-              "function": "minecraft:enchant_randomly",
-              "options": "minecraft:mending"
-            }
-          ],
-          "conditions": []
-        },
-        {
-          "type": "minecraft:item",
           "functions": [
             {
               "add": false,
@@ -413,6 +401,17 @@
           ],
           "name": "minecraft:coal",
           "weight": 7
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:book",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:enchant_randomly",
+              "options": "minecraft:mending"
+            }
+          ]
         }
       ],
       "rolls": {
