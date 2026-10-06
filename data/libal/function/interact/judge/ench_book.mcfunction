@@ -4,7 +4,7 @@
 scoreboard players set enchantments libal.main 0
 
 #count the amount of enchantments on the book
-execute store result score enchantments libal.main run data get entity @s equipment.legs.components."minecraft:stored_enchantments"
+execute store result score enchantments libal.main run data get entity @s ArmorItems[1].components."minecraft:stored_enchantments".levels
 
 #if sealed, exempt a book as it is also an enchantment
 execute unless score enchantments libal.main matches 0 if items entity @s armor.legs *[minecraft:stored_enchantments~[{enchantments:"libal:sealed"}]] run scoreboard players remove enchantments libal.main 1
