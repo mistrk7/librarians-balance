@@ -1,6 +1,6 @@
 
 #Judge whether it's sealed or not (if so, return.)
-execute if score sealed_books libal.main matches 1 if entity @s[nbt={SelectedItem:{components:{"minecraft:stored_enchantments":{"libal:sealed":1}}}}] run scoreboard players set book_is_sealed libal.main 1
+execute if score sealed_books libal.main matches 1 if entity @s[nbt={SelectedItem:{components:{"minecraft:stored_enchantments":{levels:{"libal:sealed":1}}}}}] run scoreboard players set book_is_sealed libal.main 1
 execute if score sealed_books libal.main matches 1 if entity @s[nbt={SelectedItem:{components:{"minecraft:custom_data":{sealed:1b}}}}] run scoreboard players set book_is_sealed libal.main 1
 
 execute if score book_is_sealed libal.main matches 1 positioned ~ ~ ~ run playsound block.chiseled_bookshelf.pickup.enchanted block @a
