@@ -1,3 +1,3 @@
 #I hate this less now, in fact I love it with all of my heart. I love it so much that I want to marry it. I want to have its babies and raise them in a loving home. I want to take care of it and make sure it is happy and healthy. I want to be with it forever and never let it go. I love it more than anything in the world and I will do anything to make it happy.
 
-$data modify entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments" set value {"$(enchant)":$(level)}
+$data modify entity @s Offers.Recipes[$(slot)].sell.components."minecraft:stored_enchantments".levels set value {"$(enchant)":$(level)}
